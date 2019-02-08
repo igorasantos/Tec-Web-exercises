@@ -1,21 +1,23 @@
 package servlets;
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.PrintWriter;
-@WebServlet("/P3_1_ServletExemplo")
-public class P3_1_ServletExemplo extends HttpServlet {
+@WebServlet("/P4q2")
+public class P4q2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    public P3_1_ServletExemplo() {
+    public P4q2() {
         super();
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PrintWriter saida = response.getWriter();
-		saida.write("<html><body>Olá!</body></html>");
-		saida.close();
+		PrintWriter resposta = response.getWriter();
+        resposta.write("<html><body>");
+        resposta.write("<p>Olá, " + request.getParameter("primeiroNome") + " " + request.getParameter("ultimoNome")+" !!!</p>");
+        resposta.write("</body></html>");
+        resposta.close();
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
