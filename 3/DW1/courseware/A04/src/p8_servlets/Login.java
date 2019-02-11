@@ -1,4 +1,4 @@
-package servlets;
+package p8_servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -7,31 +7,32 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-@WebServlet("/P8_Login")
-public class P8_Login extends HttpServlet {
+@WebServlet("/p8/Login")
+public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	public static final String USUARIO = "usuario";
-    public P8_Login() {
+    public Login() {
         super();
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	doPost(request,response);
     }
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PrintWriter resposta = response.getWriter();
-        resposta.write("<html><body>");
-        String nomeUsuario = request.getParameter(USUARIO);
+		String nomeUsuario = request.getParameter(USUARIO);
         String senhaUsuario = request.getParameter("senha");
         // valida se login e senha são válidos
         if (autenticar(nomeUsuario, senhaUsuario)) {
         	HttpSession sessao = request.getSession();
             sessao.setAttribute(USUARIO, nomeUsuario);
-            request.getRequestDispatcher("P8_Menu").forward(request, response);
+            request.getRequestDispatcher("Menu").forward(request, response);
         } else {
+        	PrintWriter resposta = response.getWriter();
+            resposta.write("<html><body>");
         	resposta.write("<p>Usuário e senha inválidos.</p>");
+        	resposta.write("</body></html>");
+            resposta.close();
         }
-        resposta.write("</body></html>");
-        resposta.close();
+        
 	}
 	private boolean autenticar(String nomeUser, String senhaUser) {
         // Aqui seria implementado o código de autenticação.

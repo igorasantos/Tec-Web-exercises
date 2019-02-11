@@ -1,4 +1,4 @@
-package servlets;
+package p9q3_servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -7,10 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-@WebServlet("/P8_Menu")
-public class P8_Menu extends HttpServlet {
+@WebServlet("/p9/Menu")
+public class Menu extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    public P8_Menu() {
+    public Menu() {
         super();
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -20,14 +20,16 @@ public class P8_Menu extends HttpServlet {
 		PrintWriter resposta = response.getWriter();
         resposta.write("<html><body>");
         HttpSession sessao = request.getSession(false);
-        if (sessao == null || sessao.getAttribute(P8_Login.USUARIO) == null) {
-            resposta.write("<p><a href=\"p8Login.html\">Faça primeiro o seu login</a></p>");
+        if (sessao == null || sessao.getAttribute(Login.USUARIO) == null) {
+            resposta.write("<p><a href=\"login.html\">Faça primeiro o seu login</a></p>");
         } else {
         	resposta.write("<p>Bem vindo! Você está autenticado.</p>");
             resposta.write("<p><strong>Operações disponíveis:</strong></p>");
-            resposta.write("<ul><li><a href=\"p8_CadSessao.html\">1. Cadastro</a></li>");
+            resposta.write("<ol>");
+            resposta.write("<li><a href=\"CadastroControl\">Cadastro</a></li>");
+//            request.getRequestDispatcher("CadastroControl").forward(request, response);
             // Novas opções de funcionalidades entram aqui!
-            resposta.write("</ul>");
+            resposta.write("</ol>");
         }
         resposta.write("</body></html>");
         resposta.close();

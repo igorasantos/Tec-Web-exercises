@@ -1,4 +1,4 @@
-package servlets;
+package p11_servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-@WebServlet("/P8_T1CadSessao")
-public class P8_T1CadSessao extends HttpServlet {
+@WebServlet("/p11/CadastroSessao_Tela1")
+public class CadastroSessao_Tela1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    public P8_T1CadSessao() {
+    public CadastroSessao_Tela1() {
         super();        
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -25,11 +25,10 @@ public class P8_T1CadSessao extends HttpServlet {
         resposta.write("</head>");
         resposta.write("<body>");
         HttpSession sessao = request.getSession(false);
-        if (sessao == null || sessao.getAttribute(P8_Login.USUARIO) == null) {
-                resposta.write(
-                "<p><a href=\"p8Login.html\">Faça primeiro o seu login</a></p>");
+        if (sessao == null || sessao.getAttribute(Login.USUARIO) == null) {
+        	resposta.write("<p><a href=\"login.html\">Faça primeiro o seu login</a></p>");
         } else {
-            javaClasses.P8_DadosPessoais dados = new javaClasses.P8_DadosPessoais();
+            javaClasses.DadosPessoais dados = new javaClasses.DadosPessoais();
             dados.setNome(request.getParameter("nome"));
             dados.setSobrenome(request.getParameter("sobrenome"));
             dados.setRua(request.getParameter("rua"));
@@ -40,7 +39,7 @@ public class P8_T1CadSessao extends HttpServlet {
             sessao.setAttribute("dadosPessoais", dados);
 
 	        resposta.write("Preencha seus dados profissionais:");
-	        resposta.write("<form action=\"P8_T2CadSessao\" method=\"POST\">");
+	        resposta.write("<form action=\"CadastroSessao_Tela2\" method=\"POST\">");
 	        resposta.write("Empresa:<input type=\"text\" name=\"empresa\"> <BR>");
 	        resposta.write("Endereço profissional:<BR>");
 	        resposta.write("Rua: <input type=\"text\" name=\"ruaEmpresa\">");

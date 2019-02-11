@@ -1,6 +1,6 @@
 package javaClasses;
 
-public class P8_DadosPessoais {
+public class DadosPessoais {
 	private String nome;
     private String sobrenome;
     private String rua;

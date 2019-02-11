@@ -1,4 +1,4 @@
-package servlets;
+package p11_servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -7,10 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-@WebServlet("/P8_T2CadSessao")
-public class P8_T2CadSessao extends HttpServlet {
+@WebServlet("/p11/CadastroSessao_Tela2")
+public class CadastroSessao_Tela2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	public P8_T2CadSessao() {
+	public CadastroSessao_Tela2() {
 		super();        
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -18,19 +18,21 @@ public class P8_T2CadSessao extends HttpServlet {
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter resposta = response.getWriter();
-		resposta.write("<html>");
-		resposta.write("<head>");
-		resposta.write("<title>Confirmação de registro</title>");
-		resposta.write("</head>");
-		resposta.write("<body>");
+		resposta.write("<html>");		
 		HttpSession sessao = request.getSession(false);
-		if (sessao == null || sessao.getAttribute(P8_Login.USUARIO) == null) {
-			resposta.write("<p><a href=\"p8Login.html\">Faça primeiro o seu login</a></p>");
-		} else {						
-			javaClasses.P8_DadosPessoais dados = (javaClasses.P8_DadosPessoais) sessao.getAttribute("dadosPessoais");
+		if (sessao == null || sessao.getAttribute(Login.USUARIO) == null) {
+			resposta.write("<body>");
+			resposta.write("<p><a href=\"login.html\">Faça primeiro o seu login</a></p>");
+		} else {			
+			javaClasses.DadosPessoais dados = (javaClasses.DadosPessoais) sessao.getAttribute("dadosPessoais");
 			if (dados == null) {
-				resposta.write("<p><a href=\"P8_Login\">Dados incompletos. Inicie o sistema novamente.</a></p>");
+				resposta.write("<body>");
+				resposta.write("<p><a href=\"Login\">Dados incompletos. Inicie o sistema novamente.</a></p>");
 			} else {
+				resposta.write("<head>");
+				resposta.write("<title>Confirmação de registro</title>");
+				resposta.write("</head>");
+				resposta.write("<body>");
 				resposta.write("<h3>Registro realizado com sucesso!</h3>");
 				resposta.write("<p><strong>Seus dados pessoais:</strong></p>");
 				resposta.write("<p>"+dados.getNome() + " " + dados.getSobrenome()+"</p>");
@@ -49,7 +51,8 @@ public class P8_T2CadSessao extends HttpServlet {
 				resposta.write(", ");
 				resposta.write(request.getParameter("cepEmpresa"));
 				resposta.write(", ");
-				resposta.write(request.getParameter("estadoEmpresa"+"</p>"));
+				resposta.write(request.getParameter("estadoEmpresa")+"</p>");
+				resposta.write("<p><a href=\"Menu\">Retornar ao Menu</a></p>");
 			}
 		}
 		resposta.write("</body></html>");
