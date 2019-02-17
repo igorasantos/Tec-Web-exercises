@@ -1,0 +1,3 @@
+debug = false
+name = Sistema IMD
+email = admin@imd.ufrn.br

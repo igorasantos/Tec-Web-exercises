@@ -6,10 +6,8 @@
 	<title>Insert title here</title>
 </head>
 <body>
-	<form action="p7q4.jsp" method="post">
-		E-mail: <input type="text" name="email"><br>
-		Mensagem: <input type="text" name="msg"><br>
-		<input type="submit" value="enviar">
-	</form>
+	<p>Rua Tal e tal, nº 123.</p>
+	<p>Bairro Vizinhança, Cidade-UF.</p>
+	<p>CEP: 00.000-000.</p>
 </body>
 </html>

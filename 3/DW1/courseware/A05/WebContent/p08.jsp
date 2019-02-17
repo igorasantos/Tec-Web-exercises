@@ -7,10 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<% A05.Contador.novoAcesso(); %>
+	<% javaClass.Contador.novoAcesso(); %>
 	<p>Quantidade de acessos a essa página:</p>
 	<strong>
-		<%= A05.Contador.getQuantidadeAcessos() %>
+		<%= javaClass.Contador.getQuantidadeAcessos() %>
 	</strong>
 </body>
 </html>
