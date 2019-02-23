@@ -32,15 +32,17 @@
 					    <td><%= meeting.getLocal() %></td>
 					    <td><%= meeting.getMotivo() %></td>
 					    <td>
-						    <% DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy"); %>
+						    <% DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy - hh:mm:ss"); %>
 							<% Calendar cal = meeting.getData().getInstance(); %>
 							<%= sdf.format(cal.getTime()) %>
-					    </td>
+							<% int id = meeting.getId(); %>
+							<a href="Controller?acao=remover&ind=<%= id %>">[x]</a>
+					    </td>					    
 				  	</tr>
 				<%}%>
 				</tbody>
 			</table>			
-			<p><a href="Controller">Voltar ao menu</a></p>
+			<p><a href="Controller?acao=index">Voltar ao menu</a></p>
 		</div>
 	</body>
 </html>

@@ -14,7 +14,12 @@ public class SistemaEncontros {
 	}
 	public void remover(int i) {
         encontros.remove(i);
-	}
+        int j = 0;
+        for (Encontro e : encontros) {
+			e.setId(j++);			
+        }
+//        return encontros.size();
+    }
 	public List<Encontro> consultaEncontroComUmaPessoa(String pessoa){
 		List <Encontro> listResult = new ArrayList<Encontro>();
 		for (Encontro enc: encontros) {

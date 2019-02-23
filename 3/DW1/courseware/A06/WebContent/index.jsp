@@ -9,8 +9,7 @@
 		<p>Seja bem-vindo a esse sistema! Selecione a operação desejada:</p>
 		<ol>
 			<li><a href="Controller?acao=cadastrar">Registrar um encontro.</a></li>
-			<li><a href="Controller?acao=listar">Listar meus encontros.</a></li>
-			<li><a href="Controller?acao=remover">Remover encontro.</a></li>
+			<li><a href="Controller?acao=listar">Listar ou remover meus encontros.</a></li>			
 		</ol>		
 	</body>
 </html>
