@@ -13,7 +13,13 @@
 	</head>
 	<body>
 		<div class="container">
-			<h1>Lista de encontros</h1>
+			<h1>
+			<% if (request.getAttribute("listaConsultada")==null){ %>
+				<%= "Lista de encontros" %><%;%>								
+			<%} else{%>
+				<%= "Lista de encontros consultados pelo nome" %><%;%>
+			<%}%>
+			</h1>
 			<table class="table table-hover">
 				<thead class="thead-dark">
 					<tr>
@@ -24,9 +30,15 @@
 					</tr>
 				</thead>
 				<tbody>
-				<% List<Encontro> lista = (List<Encontro>) request.getAttribute("lista");
-					for (Encontro meeting : lista) {
+				<%
+					List<Encontro> lista; 
+					if (request.getAttribute("listaConsultada")==null){
+						lista = (List<Encontro>) request.getAttribute("lista");
+					} else {
+						lista = (List<Encontro>) request.getAttribute("listaConsultada");
+					}
 				%>
+				<% for (Encontro meeting : lista) { %>
 				  	<tr>
 					    <td><%= meeting.getNomePessoa() %></td>
 					    <td><%= meeting.getLocal() %></td>
@@ -37,9 +49,10 @@
 							<%= sdf.format(cal.getTime()) %>
 							<% int id = meeting.getId(); %>
 							<a href="Controller?acao=remover&ind=<%= id %>">[x]</a>
+							<a href="Controller?acao=callLocalEdit&ind=<%= id %>">[edit]</a>
 					    </td>					    
 				  	</tr>
-				<%}%>
+				<%}%>				
 				</tbody>
 			</table>			
 			<p><a href="Controller?acao=index">Voltar ao menu</a></p>

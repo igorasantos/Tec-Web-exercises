@@ -51,35 +51,27 @@ public class Controller extends HttpServlet {
 				request.setAttribute("lista", sistema.listarEncontros());
 				resposta = "listar.jsp";
 				break;
-//			case "alterarLocalEncontro": // implementar pelo index tb.
-////				String nome = request.getParameter("nomePessoa");
-//				String localAntigo = request.getParameter("localAntigo");
-//				String localNovo = request.getParameter("localNovo");
-//				String data = request.getParameter("data");
-//				SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-//				Calendar cal = Calendar.getInstance();
-//				try {				
-//					cal.setTime(sdf.parse(data));
-//				} catch (ParseException e) {
-//					e.printStackTrace();
-//				}			
-//				for (Encontro i: sistema.listarEncontros()) {
-//					if (i.getNomePessoa()==pessoa &&
-//							i.getData().get(Calendar.YEAR)==cal.get(Calendar.YEAR) &&
-//							i.getData().get(Calendar.MONTH)==cal.get(Calendar.MONTH) &&
-//							i.getData().get(Calendar.DAY_OF_MONTH)==cal.get(Calendar.DAY_OF_MONTH) &&
-//							i.getLocal()==localAntigo
-//						) {
-//						i.setLocal(localNovo);					
-//					}
-//				}
-//				request.setAttribute("lista", sistema.listarEncontros());
-//				resposta = "listar.jsp";
-//				break;				
-			case "consultarEncontro":
-				String nome = request.getParameter("nomePessoa");
-				request.setAttribute("lista", sistema.consultaEncontroComUmaPessoa(nome));
-				resposta = "listar.jsp"; //é isso?
+			case "callLocalEdit":
+				int indexEditLocToPass = Integer.parseInt(request.getParameter("ind"));
+				request.setAttribute("lista", sistema.listarEncontros());
+				request.setAttribute("ind", indexEditLocToPass);
+				resposta = "cadastro_editLocal.jsp";
+				break;
+			case "editLocal":
+				int indexAEditLoc = Integer.parseInt(request.getParameter("indEdit"));
+				String localNovo = request.getParameter("novoLocal");
+				sistema.listarEncontros().get(indexAEditLoc).setLocal(localNovo);
+				request.removeAttribute("ind");
+				request.setAttribute("lista", sistema.listarEncontros());
+				resposta = "listar.jsp";				
+				break;
+			case "callQueryMeetByName":				
+				resposta = "queryByName.jsp";
+				break;
+			case "queryMeetingByName":
+				String nameToQuery = request.getParameter("nameConsult");
+				request.setAttribute("listaConsultada", sistema.consultaEncontroComUmaPessoa(nameToQuery)); // não tá sendo capturado pelo jsp listar. parei aqui
+				resposta = "listar.jsp";
 				break;
 			case "index":
 				break;

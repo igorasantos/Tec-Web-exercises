@@ -18,7 +18,6 @@ public class SistemaEncontros {
         for (Encontro e : encontros) {
 			e.setId(j++);			
         }
-//        return encontros.size();
     }
 	public List<Encontro> consultaEncontroComUmaPessoa(String pessoa){
 		List <Encontro> listResult = new ArrayList<Encontro>();
@@ -28,5 +27,5 @@ public class SistemaEncontros {
 			}
 		}				
 		return listResult;
-	}
+	}	
 }
