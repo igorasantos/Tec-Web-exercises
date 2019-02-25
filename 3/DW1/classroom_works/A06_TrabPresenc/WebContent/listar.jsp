@@ -31,15 +31,13 @@
 				</thead>
 				<tbody>
 				<%
-					//List<Encontro> lista;
+					List<Encontro> lista;
 					//bugou aqui
-					//if (request.getAttribute("listaConsultada")==null){
-					//	lista = (List<Encontro>) request.getAttribute("lista");
-					//} else {
-						//lista = (List<Encontro>) request.getAttribute("listaConsultada");
-						List<Encontro> lista = (List<Encontro>) request.getAttribute("lista");
-					//}
-					//System.out.println(lista.size());
+					if (request.getAttribute("listaConsultada")==null){
+						lista = (List<Encontro>) request.getAttribute("lista");
+					} else {
+						lista = (List<Encontro>) request.getAttribute("listaConsultada");
+					}					
 				%>
 				<% for (Encontro meeting : lista) { %>
 				  	<tr>

@@ -15,8 +15,6 @@
 <body>
 	<h1>Consulta por nome</h1>
 	<form action="Controller" method="post">
-		<%-- List<Encontro> lista = (List<Encontro>) request.getAttribute("lista"); --%>
-		<%-- int id = (Integer) request.getAttribute("ind"); --%>
 		<input type="hidden" name="acao" value="queryMeetingByName"/>		
 		<label for="nameConsult">Nome a consultar: </label><input type="text" name="nameConsult" value=""/><br>
 		<input type="submit" value="Consultar encontros com essa pessoa"/><br>

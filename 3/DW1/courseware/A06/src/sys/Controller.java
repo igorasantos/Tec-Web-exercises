@@ -41,6 +41,7 @@ public class Controller extends HttpServlet {
 				resposta = "listar.jsp";
 				break;
 			case "listar":
+				request.removeAttribute("listaConsultada");
 				request.setAttribute("lista", sistema.listarEncontros());
 				resposta = "listar.jsp";
 				break;
@@ -70,7 +71,7 @@ public class Controller extends HttpServlet {
 				break;
 			case "queryMeetingByName":
 				String nameToQuery = request.getParameter("nameConsult");
-				request.setAttribute("lista", sistema.consultaEncontroComUmaPessoa(nameToQuery)); // tá sendo passado
+				request.setAttribute("listaConsultada", sistema.consultaEncontroComUmaPessoa(nameToQuery)); // tá sendo passado
 				resposta = "listar.jsp";
 				break;
 			case "index":
