@@ -5,7 +5,11 @@
 	<body>
 		<h1>Lista de filmes</h1>
 		<table>
-			<c:forEach var="filme" items="${filmes}"><tr><td>${filme}</td></tr></c:forEach>
+			<c:forEach var="filme" items="${filmes}"> <!-- o ${} aqui é equivalente a fazer request.getAttribute("filmes");-->
+				<tr>
+					<td>${filme}</td>
+				</tr>
+			</c:forEach>
 		</table>
 	</body>
 </html>

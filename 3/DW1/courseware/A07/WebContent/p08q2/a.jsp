@@ -13,7 +13,7 @@
 	<body>
 		<h1>Call Multiplication Table</h1>					
 		<form action="b.jsp">
-			<label for="multFactor">Type a number: </label><input type="number" name="multFactor" value=""/><br>
+			<label for="multFactor">Type a number: </label><input type="number" name="multFactor" placeholder="Type a number"/><br>
 			<input type="submit" value="Make multiplication table"/><br>
 		</form>
 	</body>

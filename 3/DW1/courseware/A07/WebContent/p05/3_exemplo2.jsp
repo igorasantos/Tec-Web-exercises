@@ -8,7 +8,7 @@
 		    <c:forEach var="filme" items="${filmes}">
 		    <tr>
 		    	<td>
-		        	<input type="text" name="meufilme" value="<c:out value="${filme}" escapeXml="false"/>"/>
+		        	<input type="text" name="meufilme" value="<c:out value="${filme}" escapeXml="true"/>"/>
 		        </td>
 		    </tr>
 		    </c:forEach>
