@@ -32,7 +32,6 @@
 				<tbody>
 				<%
 					List<Encontro> lista;
-					//bugou aqui
 					if (request.getAttribute("listaConsultada")==null){
 						lista = (List<Encontro>) request.getAttribute("lista");
 					} else {
