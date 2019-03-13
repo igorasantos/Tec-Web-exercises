@@ -24,13 +24,12 @@
 							<th>Type="both" date and timeStyle="short"</th>
 							<th>Type="both" date and timeStyle="medium"</th>
 							<th>Type="both" date and timeStyle="long"</th>
-							<th>Type="both" date and timeStyle="full"</th>
-							<th></th>
+							<th>Type="both" date and timeStyle="full"</th>							
 						</tr>
 					</thead>
 					<tbody>
 						<c:forEach var="pessoa" items="${pessoas}">
-						<c:set value="${pessoa.dataNascimento.getTime()}" var="thisP"/>
+							<c:set value="${pessoa.dataNascimento.getTime()}" var="thisP"/>
 							<tr>				
 								<td><c:out value="${pessoa.nome}"/></td>							
 								<td><fmt:formatDate value="${thisP}" type="date" dateStyle="default"/></td>
