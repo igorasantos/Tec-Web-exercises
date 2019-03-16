@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Page Title</title>
+  <script>
+    var over = 0;
+    var out = 0;
+    function contOver() {
+      over++;      
+      document.querySelector('#p1st').innerHTML = "Over: " + over;
+    }
+    function contOut() {
+      out++;
+      document.querySelector('#p2nd').innerHTML = "Out: " + out;
+    }
+    function imprimeAlerta() {
+      alert("Entradas: " + over + ". Saidas: " + out);
+    }
+  </script>
+  <style>
+    #divTest {
+      width: 100px;
+      height: 100px;
+      background-color: greenyellow;
+      display: flex;
+      justify-content: center;
+      /* align-items: center; */
+      flex-wrap: wrap;
+      padding: 0;
+      margin:0;
+    }
+    p {
+      width: 100%;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body onClick="imprimeAlerta()">
+  <div id="divTest" onmouseover="contOver()" onmouseout="contOut()">
+    <p id="p1st"></p>
+    <p id="p2nd"></p>
+  </div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Page Title</title>
+  <script>
+    var times = 0;
+    function multiply(t) {
+      for (var i = 0; i < t; i++) {
+        var divCreated = document.createElement("div");
+        divCreated.setAttribute("id", "divTest");
+        var txt = document.createElement("p");
+        txt.innerHTML = (i+1);
+        divCreated.appendChild(txt);
+        document.getElementsByTagName("body")[0].appendChild(divCreated);
+      }
+    }
+    function valueIn() {
+      times = prompt("Digite a quantidade desejada de divs:");
+    }
+  </script>
+  <style>
+    body{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    #divTest {
+      width: 100px;
+      height: 100px;
+      background-color: greenyellow;    
+      padding: 0;
+      margin:10px;
+      display: flex;
+      justify-content: center;
+    }
+    p {
+      width: 100%;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2em;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>  
+  <script>
+    valueIn();
+    console.log(times);
+    multiply(times);
+  </script>
+</body>
+</html>
+
+
+

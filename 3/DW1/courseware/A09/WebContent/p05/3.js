@@ -1,0 +1,1 @@
+const maximo = 100;

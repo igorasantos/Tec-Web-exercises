@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script>
+    var op='';
+    var op1=0;
+    var op2=0;
+    var result=0;
+    function readMathOp(){
+      op = prompt("Digite a operação desejada");
+    }
+    function readOperands(){
+      op1 = prompt("1o valor:");
+      op2 = prompt("2o valor:");
+    }
+    function calc(op1_,op2_,op_) {
+      switch (op_) {
+        case '+':
+          result = Number(op1) + Number(op2);
+          break;
+        case '-':
+          result = op1 - op2;
+          break;
+        case '*':
+          result = op1 * op2;
+          break;
+        case '/':
+          result = op1 / op2;
+          break;
+        default:
+          alert("Você não digitou uma operação válida.")
+          break;
+      }
+      return result;
+    }
+    function alerta(){
+      alert("Você será redirecionado para o site do Google.");
+    }
+  </script>
+</head>
+<body>
+  <script>
+    readMathOp();
+    readOperands();
+    document.write(`<h1>Cálculo</h1><p>${op1} <em>${op}</em> ${op2} = <em style="font-size: 1.5em;">${calc(op1, op2, op)}</em>.</p>`);    
+  </script>
+</body>
+</html>
