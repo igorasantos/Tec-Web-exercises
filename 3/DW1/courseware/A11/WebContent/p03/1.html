@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-1.10.0.min.js"></script>
+		<script src="https://rawgit.com/RobinHerbots/Inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>		
+		<script src="1.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Registros existentes</h1>			
+			<table class="table table-hover">
+				<thead class="thead-dark">
+					<tr>
+						<th>Nome</th>
+						<th>CPF</th>
+					</tr>
+				</thead>
+				<tbody id="registros">
+					<tr>
+						<td>Maria Bonita</td>
+						<td>029.221.222-22</td>					    
+					</tr>
+				</tbody>
+			</table>
+			<h1>Adicionar registros</h1>
+			<form>
+				<div class="form-group">
+					<label for="inputNome">Nome:</label>
+					<input type="text" class="form-control" id="inputNome" name="inputNome" placeholder="Type the name">
+				</div>
+				<div class="form-group">
+					<label for="inputCPF">CPF:</label>
+					<input type="text" class="form-control" id="inputCPF" name="inputCPF" placeholder="Type the CPF number" title="CPF number">					
+				</div>
+				<button type="button" class="btn btn-primary" onclick="inserirRegistro()">Inserir registro</button>
+			</form>
+		</div>
+		<script src="1_inputMaskConfig.js"></script>
+	</body>
+</html>

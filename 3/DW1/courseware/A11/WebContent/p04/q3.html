@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+		<script src="https://unpkg.com/autonumeric"></script>		
+		<script src="q3.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Cadastro demográfico</h1>			
+			<table class="table table-hover">
+				<thead class="thead-dark">
+					<tr>
+						<th>Cidade</th>
+						<th>População</th>
+						<th>Estado</th>
+						<th>País</th>
+					</tr>
+				</thead>
+				<tbody id="registros">
+				</tbody>
+			</table>
+			<h1>Adicionar localidade</h1>
+			<form>
+				<div class="form-row">
+					<div class="form-group col-md-8">
+						<label for="inputCity">Cidade</label>
+						<input type="text" class="form-control" id="inputCity" name="inputCity" placeholder="Type the city">
+					</div>
+					<div class="form-group col-md-4">
+						<label for="inputCityPop">População da cidade</label>
+						<input type="text" class="form-control" id="inputCityPop" name="inputCityPop" placeholder="Type the city population"
+							min="0">						
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col">
+						<label for="inputConstState">Estado constituinte</label>
+						<input type="text" class="form-control" id="inputConstState" name="inputConstState" placeholder="Type the constituent state">
+					</div>
+					<div class="form-group col">
+						<label for="inputSovState">Estado soberano</label>
+						<input type="text" class="form-control" id="inputSovState" name="inputSovState"
+							placeholder="Type the sovereign state">
+						<small id="sovStateHelp" class="form-text text-muted">Por exemplo, país.</small>
+					</div>
+				</div>				
+				<button type="button" class="btn btn-primary" onclick="inserirRegistro();eraseForm();">Inserir registro</button>
+			</form>
+		</div>
+		<script src="q3_autonumericConfig.js"></script>
+	</body>
+</html>
