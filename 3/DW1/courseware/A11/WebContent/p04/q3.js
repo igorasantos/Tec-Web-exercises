@@ -1,66 +1,46 @@
-// fluxo de criação ok, mas de criação, não.
-
 var formEditingRow = false;
-
-function main(l){
-	var index = readIndex(l);
-	//testar depois o fluxo do edit
-	if (formEditingRow == true){
-		dataRecToForm(index);
-	}
+function mainCreating(){
+	var index = document.getElementById('registros').rows.length;	
 	createDataRowInTable(index);
-	var rowToFill = document.getElementById('registros').rows[index];
-	var arrayInputs = readInputs();
+	var arrayNewValues = readInputs();
 	eraseForm();
-	// criação - ok até aqui.
-	// var newFilledLine = dataFilling(newEmptyLine, arrayInputs, index);
-	
-	// updateTable(newFilledLine, index);
-	updateTable(rowToFill, arrayInputs, index);
-	if (formEditingRow == true) {
-		endEditing();
-	}
+	updateTable(arrayNewValues, index);
 }
-function startEditing(i){
+function mainEditing1(i){
 	formEditingRow = true;
-	main(i);
+	document.getElementById("botao").setAttribute("onclick",`mainEditing2(${i})`);
+	dataRecToForm(i);
 }
-function readIndex(lin){	
-	var ind;
-	if (formEditingRow == true){
-		ind = lin;
-	} else {
-		ind = document.getElementById('registros').rows.length;		
-	}	
-	return ind;
+function mainEditing2(indxx) {
+	var arrayNewValues = readInputs();
+	updateTable(arrayNewValues, indxx);
+	endEditing();
 }
 function dataRecToForm(line){	
 	//recupera TR
 	var storedRow = document.getElementById("registros").rows[line];
-	//evita que a TR seja apagada
+	//TR to array
 	var sR0 = storedRow.cells[0].innerText;
 	var sR1 = storedRow.cells[1].innerText;
 	var sR2 = storedRow.cells[2].innerText;
 	var sR3 = storedRow.cells[3].innerText;
 	var arrayStoredRow = [sR0,sR1,sR2,sR3];
-	//preenche form inputs - os inputs não estão recendo os valores do TR
-	document.forms['localidade']['inputCity'].value = arrayStoredRow[0];
-	document.forms['localidade']['inputCityPop'].value = arrayStoredRow[1];
-	document.forms['localidade']['inputConstState'].value = arrayStoredRow[2];
-	document.forms['localidade']['inputSovState'].value = arrayStoredRow[3];
+	//preenche form inputs
+	var formulario = document.forms['localidade'];
+	formulario['inputCity'].value = arrayStoredRow[0];
+	formulario['inputCityPop'].value = arrayStoredRow[1];
+	formulario['inputConstState'].value = arrayStoredRow[2];
+	formulario['inputSovState'].value = arrayStoredRow[3];
 }
-function createDataRowInTable(ln){
-	if (formEditingRow == false){
-		//adiciona nova linha vinculada à tabela
+function createDataRowInTable(ln){	
+		//adiciona nova linha vinculada ao tableBody
 		var tableBody = document.getElementById('registros');
 		//see refs
-		var newLine = tableBody.insertRow(ln);
-
-		newLine.insertCell(0); // aplicar um for aqui depois
+		var newLine = tableBody.insertRow(ln); //thanks to https://github.com/StefanYohansson
+		newLine.insertCell(0);
 		newLine.insertCell(1);
 		newLine.insertCell(2);
-		newLine.insertCell(3);
-	}
+		newLine.insertCell(3);	
 }
 function readInputs() {
 	var i1 = document.getElementById('inputCity').value;
@@ -76,52 +56,48 @@ function eraseForm() {
 	document.getElementById('inputConstState').value = "";
 	document.getElementById('inputSovState').value = "";
 }
-// function dataFilling(nEmpL, aInp, indx){
-// 	//aplicar um for aqui depois
-// 	// ou seria innerHTML?
-// 	nEmpL.cells[0].innerText = aInp[0];
-// 	nEmpL.cells[1].innerText = aInp[1];
-// 	nEmpL.cells[2].innerText = aInp[2];
-// 	nEmpL.cells[3].innerText = aInp[3];
+function updateTable(aNV, indx) {
+	var rowToFill = document.getElementById('registros').rows[indx];
+	var textNode0 = document.createTextNode(aNV[0]);	
+	var textNode1 = document.createTextNode(aNV[1]);
+	var textNode2 = document.createTextNode(aNV[2]);
+	var textNode3 = document.createTextNode(aNV[3]);
 
-// 	// 1a celula - cria link
-// 	var link = document.createElement("a");
-// 	link.href = "#";
-// 	// var paramOnClick = `main(${indx})`;
-// 	link.setAttribute("onclick", `startEditing(${indx})`);
-// 	link.innerText = " ";
+	if (formEditingRow == false){
+		rowToFill.childNodes[0].appendChild(textNode0);
+		rowToFill.childNodes[1].appendChild(textNode1);
+		rowToFill.childNodes[2].appendChild(textNode2);
+		rowToFill.childNodes[3].appendChild(textNode3);
+	} else {
+		var cNL0 = rowToFill.childNodes[0];
+		while (cNL0.hasChildNodes()) {
+			cNL0.removeChild(cNL0.firstChild);
+		}
+		cNL0.appendChild(textNode0);
 
-// 	// 1a celula - adiciona ícone de edição	
-// 	var icon = document.createElement("i");
-// 	icon.setAttribute("class", "fas fa-pen fa-sm");
+		var cNL1 = rowToFill.childNodes[1];
+		while (cNL1.hasChildNodes()) {
+			cNL1.removeChild(cNL1.firstChild);
+		}
+		cNL1.appendChild(textNode1);
+		
+		var cNL2 = rowToFill.childNodes[2];
+		while (cNL2.hasChildNodes()) {
+			cNL2.removeChild(cNL2.firstChild);
+		}
+		cNL2.appendChild(textNode2);
 
-// 	//1a celula - adicionar ícone ao link
-// 	link.appendChild(icon);
-
-// 	// 1a celula - adiciona link à célula
-// 	nEmpL.cells[0].appendChild(link);
-// 	return nEmpL;
-// }
-
-// function updateTable(nFillL, idx){
-// 	var tableBody = document.getElementById('registros'); //essa porra tá vindo com uma TR vazia, mas q não deveria existir
-// 	if (formEditingRow == true) {
-// 		tableBody.rows[idx] = nFillL;
-// 	} else {
-// 		// var newLine = tableBody.insertRow(totalLines);
-// 		tableBody.insertRow(nFillL);
-// 	}
-// }
-function updateTable(rTF, aInp, indx) {
-	rTF.cells[0].innerHTML = aInp[0];
-	rTF.cells[1].innerHTML = aInp[1];
-	rTF.cells[2].innerHTML = aInp[2];
-	rTF.cells[3].innerHTML = aInp[3];
-
+		var cNL3 = rowToFill.childNodes[3];
+		while (cNL3.hasChildNodes()) {
+			cNL3.removeChild(cNL3.firstChild);
+		}
+		cNL3.appendChild(textNode3);
+	}
+	
 	// 1a celula - cria link
 	var link = document.createElement("a");
 	link.href = "#";
-	link.setAttribute("onclick", `startEditing(${indx})`);
+	link.setAttribute("onclick", `mainEditing1(${indx})`);
 	link.innerText = " ";
 
 	// 1a celula - adiciona ícone de edição	
@@ -132,10 +108,12 @@ function updateTable(rTF, aInp, indx) {
 	link.appendChild(icon);
 
 	// 1a celula - adiciona link à célula
-	rTF.cells[0].appendChild(link);
+	rowToFill.childNodes[0].appendChild(link);
 }
 function endEditing(){
 	formEditingRow = false;
+	document.getElementById("botao").setAttribute("onclick", "mainCreating(-1);");
+	eraseForm(); //Thanks to https://github.com/JoaoVSouto
 }
 
 /*
