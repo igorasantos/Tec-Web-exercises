@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  
+</head>
+<body class="h-100">
+  <main role="main">
+    <div class="container p-md-3">
+      <h1>Teste de métodos move__() do Objeto Window</h1>
+      <p>Clique primeiro em 'Nova Janela'</p>
+      <form action="javascript:void(0);" class="p-md-2">
+        <div class="form-group row">
+          <label for="inputPositionX" class="col-sm-2 col-form-label">Posição X</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" id="inputPositionX" placeholder="X pixels" aria-describedby="posXHelp">
+            <small id="posXHelp" class="form-text text-muted">
+              Valor em pixel. Aceita negativo.
+            </small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputPositionY" class="col-sm-2 col-form-label">Posição Y</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" id="inputPositionY" placeholder="Y pixels" aria-describedby="posYHelp">
+            <small id="posYHelp" class="form-text text-muted">
+              Valor em pixel. Aceita negativo.
+            </small>
+          </div>
+        </div>
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">Tipo de movimento</legend>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="radioButtons" id="radioButton1" value="op1">
+                <label class="form-check-label" for="radioButton1">
+                  moveBy(): Endereço relativo à posição atual
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="radioButtons" id="radioButton2" value="op2">
+                <label class="form-check-label" for="radioButton2">
+                  moveTo(): Endereço absoluto (coordenadas específicas)
+                </label>
+              </div>          
+            </div>
+          </div>
+        </fieldset>
+        <div class="form-group row">
+          <div class="col">
+            <button type="submit" class="btn btn-primary" id="buttonOpen">Nova Janela</button>
+            <button type="submit" class="btn btn-warning" id="buttonMove">Mover</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+  <script src="q3.js"></script>
+</body>
+</html>
