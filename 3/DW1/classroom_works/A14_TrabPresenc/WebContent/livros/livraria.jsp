@@ -42,7 +42,7 @@
           <p class="lead">Uma das melhores fontes do conhecimento humano. Compre um agora mesmo.</p>
           <p class="lead">
             <c:url var="url" value="/livros/catalogo"/>
-            <a href="${url}?Add=" class="btn btn-lg btn-secondary">Iniciar compras</a>            
+            <a href="${url}?Add=" class="btn btn-lg btn-secondary">Iniciar compras</a>
           </p>
         </main>
         <footer class="mastfoot mt-auto">

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 import negocio.CarrinhoCompras;
 import negocio.Livraria;
 import negocio.Livro;
-@WebServlet(name ="Controlador",urlPatterns = { "/livros/livraria","/livros/catalogo" })
+@WebServlet(name ="Controlador",urlPatterns = { "/livros/livraria","/livros/catalogo","/livros/detalhesLivro" })
 public class ServletControladorLivraria extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
