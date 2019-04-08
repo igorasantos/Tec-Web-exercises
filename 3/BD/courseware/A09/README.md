@@ -2,10 +2,12 @@
 _by page in the courseware_
 
 ## p02
+``` sql
 CREATE DATABASE a09;
 USE a09;
-
-### Vid 02
+```
+### vid 02
+``` sql
 CREATE DATABASE a09vids;
 USE a09vids;
 SHOW DATABASES;
@@ -22,8 +24,11 @@ pes_cidade varchar(30),
 pes_filhos tinyint);
 
 SHOW TABLES;
+```
 
+---
 ## p04
+``` sql
 USE a09;
 
 CREATE TABLE clientes (
@@ -43,9 +48,12 @@ fil_duracao TIME,
 fil_situacao VARCHAR(12),
 fil_preco NUMERIC(3,2)
 );
+```
 
+---
 ## p05 (ativ)
 ### q01
+``` sql
 CREATE DATABASE a09p5q1;
 USE a09p5q1;
 
@@ -61,8 +69,11 @@ prod_qtd int
 );
 
 SHOW TABLES;
+```
 
+---
 ## p06
+``` sql
 USE a09;
 
 INSERT INTO clientes
@@ -83,8 +94,9 @@ INSERT INTO clientes
 (cli_codigo, cli_nome, cli_sexo, cli_email)
 VALUES
 (4, 'Francisca da Silva', 'F', 'franciscaSilva@cursoSQL.com');
-
-### Vid 3
+```
+### vid 03
+``` sql
 USE a09vids;
 
 SHOW TABLES;
@@ -103,31 +115,43 @@ VALUES
 (10,'Fabíola','João Pessoa',1),
 (11,'Gabriela','Rio de Janeiro',0),
 (12,'Iara','São Paulo',1);
+```
 
+---
 ## p07 (ativ)
+``` sql
 USE a09;
-### 1a
+```
+### q01a
+``` sql
 INSERT INTO filmes
 (fil_codigo, fil_titulo, fil_genero, fil_duracao, fil_situacao, fil_preco)
 VALUES
 (1, 'E o vento Levou', 'romance', '0:03:10', 'alugado', 5.00);
-### 1b
+```
+### q01b
+``` sql
 INSERT INTO filmes
 (fil_codigo, fil_titulo, fil_genero, fil_duracao, fil_situacao,fil_preco)
 VALUES
 (2, 'O silêncio dos inocentes', 'policial', '0:02:00', 'disponível', 02.50);
-
-### 1c
+```
+### q01c
+``` sql
 INSERT INTO filmes VALUES
 (3, 'Procurando Nemo', 'animação', '0:01:40','alugado', 02.50);
-
-### 1d
+```
+### q01d
+``` sql
 INSERT INTO filmes
 (fil_codigo, fil_titulo, fil_genero, fil_situacao, fil_duracao)
 VALUES
 (4, 'Cidade de Deus', 'ação', 'disponível', '0:02:10');
+```
 
+---
 ## p08
+``` sql
 USE a09;
 
 UPDATE clientes
@@ -139,8 +163,11 @@ SET fil_preco = fil_preco - 1;
 
 UPDATE filmes
 SET fil_preco = 4.50;
+```
 
+---
 ## p09
+``` sql
 DELETE FROM clientes
 WHERE cli_sexo = 'M';
 
@@ -150,8 +177,9 @@ WHERE fil_genero= 'terror';
 DELETE FROM filmes;
 
 DROP TABLE filmes;
-
-### Vid 4
+```
+### vid 04
+``` sql
 USE a09vids;
 ALTER TABLE pessoas ADD pes_nascimento date;
 
@@ -170,13 +198,17 @@ UPDATE pessoas SET pes_nascimento = '1994/07/21' WHERE pes_cod = 7;
 UPDATE pessoas SET pes_nascimento = '1997/09/16' WHERE pes_cod = 9;
 
 DELETE FROM pessoas WHERE pes_cidade = 'São Paulo' OR pes_cidade = 'Rio de Janeiro';
+```
 
+---
 ## p13 (ativ)
-### q1
+### q01
+``` sql
 CREATE DATABASE a09p13;
 USE a09p13;
-
-### q2
+```
+### q02
+``` sql
 CREATE TABLE alunos (
 aluno_cod int,
 aluno_nome varchar(100),
@@ -197,27 +229,33 @@ prof_nome varchar(100),
 prof_endereco varchar(200),
 prof_cidade varchar(100)
 );
-
-### q3a
+```
+### q03a
+``` sql
 INSERT INTO alunos
 VALUES
 (1,'Joao','Rua da Li','São Paulo'),
 (10,'Maria','Avenida Paulista','São Paulo');
-
-### q3b
+```
+### q03b
+``` sql
 INSERT INTO disciplina
 VALUES
 (1,'Matemática',60,'Sidarta'),
 (5,'Português',40,'Pascoale');
-
-### q3c
+```
+### q03c
+``` sql
 INSERT INTO professores
 VALUES
 (1,'Fátima','Rua da Praia','Rio de Janeiro'),
 (5,'Roberto','Av. Sen. Salg Filho','Natal');
-
-### q4
+```
+### q04
+``` sql
 UPDATE disciplina SET dis_carga = dis_carga + 10;
-
-### q5
+```
+### q05
+``` sql
 DELETE FROM disciplina WHERE dis_professor = 'Roberto';
+```
