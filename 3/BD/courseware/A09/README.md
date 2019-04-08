@@ -3,8 +3,8 @@ _by page in the courseware_
 
 ## p02
 ``` sql
-CREATE DATABASE a09;
-USE a09;
+CREATE DATABASE a09locadora;
+USE a09locadora;
 ```
 ### vid 02
 ``` sql
@@ -26,10 +26,9 @@ pes_filhos tinyint);
 SHOW TABLES;
 ```
 
----
 ## p04
 ``` sql
-USE a09;
+USE a09locadora;
 
 CREATE TABLE clientes (
 cli_codigo INT,
@@ -50,7 +49,6 @@ fil_preco NUMERIC(3,2)
 );
 ```
 
----
 ## p05 (ativ)
 ### q01
 ``` sql
@@ -71,10 +69,9 @@ prod_qtd int
 SHOW TABLES;
 ```
 
----
 ## p06
 ``` sql
-USE a09;
+USE a09locadora;
 
 INSERT INTO clientes
 (cli_codigo, cli_nome, cli_cpf, cli_data_nasc, cli_sexo, cli_email)
@@ -117,10 +114,9 @@ VALUES
 (12,'Iara','São Paulo',1);
 ```
 
----
 ## p07 (ativ)
 ``` sql
-USE a09;
+USE a09locadora;
 ```
 ### q01a
 ``` sql
@@ -149,10 +145,9 @@ VALUES
 (4, 'Cidade de Deus', 'ação', 'disponível', '0:02:10');
 ```
 
----
 ## p08
 ``` sql
-USE a09;
+USE a09locadora;
 
 UPDATE clientes
 SET cli_email = 'silvajose@cursosql.com'
@@ -165,7 +160,6 @@ UPDATE filmes
 SET fil_preco = 4.50;
 ```
 
----
 ## p09
 ``` sql
 DELETE FROM clientes
@@ -200,7 +194,6 @@ UPDATE pessoas SET pes_nascimento = '1997/09/16' WHERE pes_cod = 9;
 DELETE FROM pessoas WHERE pes_cidade = 'São Paulo' OR pes_cidade = 'Rio de Janeiro';
 ```
 
----
 ## p13 (ativ)
 ### q01
 ``` sql
