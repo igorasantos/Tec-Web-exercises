@@ -6,7 +6,7 @@ _by page in the courseware_
 CREATE DATABASE a09locadora;
 USE a09locadora;
 ```
-### vid 02
+### v02
 ``` sql
 CREATE DATABASE a09vids;
 USE a09vids;
@@ -52,8 +52,8 @@ fil_preco NUMERIC(3,2)
 ## p05 (ativ)
 ### q01
 ``` sql
-CREATE DATABASE a09p5q1;
-USE a09p5q1;
+CREATE DATABASE a09p05;
+USE a09p05;
 
 CREATE TABLE funcionarios (
 func_id int,
@@ -92,7 +92,7 @@ INSERT INTO clientes
 VALUES
 (4, 'Francisca da Silva', 'F', 'franciscaSilva@cursoSQL.com');
 ```
-### vid 03
+### v03
 ``` sql
 USE a09vids;
 
@@ -172,7 +172,7 @@ DELETE FROM filmes;
 
 DROP TABLE filmes;
 ```
-### vid 04
+### v04
 ``` sql
 USE a09vids;
 ALTER TABLE pessoas ADD pes_nascimento date;
