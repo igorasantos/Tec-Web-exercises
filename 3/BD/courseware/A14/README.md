@@ -76,7 +76,7 @@ SELECT * FROM vw_aut_obras_cross_join;
 ``` sql
 USE a14locadora;
 ```
-### p03q01a
+### p03q1a
 ``` sql
 CREATE VIEW vw_cli_dados_pessoais AS
 SELECT cli_nome AS Nome, cli_cpf AS CPF, cli_sexo AS Sexo, cli_profissao AS 'Profissão'
@@ -86,7 +86,7 @@ SHOW TABLES;
 
 DESC vw_cli_dados_pessoais;
 ```
-### p03q01b
+### p03q1b
 ``` sql
 SELECT * FROM vw_cli_dados_pessoais;
 ```
@@ -190,7 +190,7 @@ SELECT * FROM vw_autores;
 ``` sql
 USE a14folhaPagto;
 ```
-### p08q01a
+### p08q1a
 _The question asked to be created just one View, but maybe it would be interesting more than this._
 ``` sql
 CREATE VIEW vw_lanc_folha AS
@@ -216,7 +216,7 @@ SELECT * FROM pagamentos;
 SELECT * FROM descontos;
 SELECT * FROM vw_lanc_folha;
 ```
-### p08q01b
+### p08q1b
 ``` sql
 DELETE FROM descontos;
 DELETE FROM pagamentos;
@@ -264,7 +264,7 @@ SELECT * FROM pagamentos;
 SELECT * FROM descontos;
 SELECT * FROM vw_lanc_folha;
 ```
-### q01c
+### p08q1c
 ``` sql
 UPDATE vw_lanc_folha
 SET valor_inss = valor_inss - 10;
@@ -306,7 +306,8 @@ SELECT * FROM vw_aut_obras_inner_join;
 ``` sql
 USE a14sistEdu;
 ```
-### p12q01a
+### p12q1a
+``` sql
 CREATE VIEW vw_profs_natal AS
 SELECT
 prof_nome
@@ -320,7 +321,7 @@ DESC vw_profs_natal;
 SELECT * FROM professores;
 SELECT * FROM vw_profs_natal;
 ```
-### p12q01b
+### p12q1b
 ``` sql
 INSERT INTO alunos
 VALUES
@@ -338,7 +339,7 @@ DESC vw_alunos_por_cidade;
 SELECT * FROM alunos;
 SELECT * FROM vw_alunos_por_cidade;
 ```
-### p12q01c
+### p12q1c
 ``` sql
 CREATE VIEW vw_discs_profs AS
 SELECT
@@ -351,8 +352,8 @@ DESC vw_discs_profs;
 SELECT * FROM disciplina;
 SELECT * FROM vw_discs_profs;
 ```
-_see the [update step](#p12q01c-updating)_
-### p12q01d
+_Check the [update step](#p12q1c-updating)._
+### p12q1d
 #### Adaptation of table structure
 ``` sql
 ALTER TABLE disciplina RENAME TO disciplinas;
@@ -413,7 +414,7 @@ SELECT * FROM professores;
 SELECT * FROM disciplinas;
 SELECT * FROM vw_profs_NDiscs;
 ```
-### p12q01c updating
+### p12q1c updating
 _Update the view vw_discs_profs, on p12q1c, due to the commands on p12q1d_
 ``` sql
 DROP VIEW vw_discs_profs;

@@ -247,7 +247,7 @@ SELECT cli_nome, fil_titulo
 FROM clientes CROSS JOIN filmes;
 ```
 ## p08
-_Matching the data to those used in the courseware_
+_Matching the data to those used in the courseware._
 ``` sql
 DELETE FROM compras;
 DELETE FROM sessao;
