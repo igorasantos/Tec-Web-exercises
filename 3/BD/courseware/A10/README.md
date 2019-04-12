@@ -2,13 +2,14 @@
 _by page in the courseware_
 
 ## Before (with `.my.cnf` setted)
+In the MySQL Server terminal:
 ``` sql
 CREATE DATABASE a10locadora;
 CREATE DATABASE a10vids;
 CREATE DATABASE a10sistEdu;
 exit;
 ```
-
+In the Bash terminal:
 ``` bash
 mysqldump a09locadora | mysql a10locadora
 mysqldump a09vids | mysql a10vids
@@ -17,6 +18,7 @@ mysql
 ```
 
 ## p02
+Back to the MySQL Server terminal:
 ``` sql
 USE a10locadora;
 DESC clientes;
