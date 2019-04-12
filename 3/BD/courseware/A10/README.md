@@ -5,12 +5,14 @@ _by page in the courseware_
 ``` sql
 CREATE DATABASE a10locadora;
 CREATE DATABASE a10vids;
+CREATE DATABASE a10sistEdu;
 exit;
 ```
 
 ``` bash
 mysqldump a09locadora | mysql a10locadora
 mysqldump a09vids | mysql a10vids
+mysqldump a09sistEdu | mysql a10sistEdu;
 mysql
 ```
 
@@ -22,6 +24,7 @@ SHOW DATABASES;
 SHOW TABLES;
 ```
 ## p03 (ativ)
+### p03q1
 ``` sql
 USE a09p05;
 DESC funcionarios;
@@ -59,6 +62,7 @@ SELECT * FROM pessoas;
 SELECT pes_nome, pes_cidade FROM pessoas;
 ```
 ## p06 (ativ)
+### p06q1
 ``` sql
 USE a10locadora;
 
@@ -78,11 +82,25 @@ VALUES
 (2, 'O silêncio dos inocentes', 'policial', '0:02:00', 'disponível',02.50),
 (3, 'Procurando Nemo', 'animação', '0:01:40','alugado', 02.50),
 (4, 'Cidade de Deus', 'ação', '0:02:10','disponível',3.00);
-
+```
+#### p06q1a
+``` sql
 SELECT cli_nome, cli_cpf FROM clientes;
+```
+#### p06q1b
+``` sql
 SELECT * FROM filmes;
+```
+#### p06q1c
+``` sql
 SELECT cli_nome, cli_email FROM clientes WHERE cli_sexo='M';
+```
+#### p06q1d
+``` sql
 SELECT fil_codigo, fil_titulo FROM filmes;
+``` 
+#### p06q1e
+``` sql
 SELECT fil_duracao FROM filmes WHERE fil_titulo='E o vento Levou';
 ```
 ## p07
@@ -158,59 +176,52 @@ SELECT * FROM pessoas
 WHERE pes_nascimento IS NOT NULL;
 ```
 ## p09 (ativ)
+### p09q1
 ``` sql
 USE a10locadora;
+```
+#### p09q1a
+``` sql
 SELECT fil_titulo FROM filmes WHERE fil_preco >= 2.5;
+```
+#### p09q1b
+``` sql
 SELECT cli_nome FROM clientes WHERE cli_sexo = 'M';
+```
+#### p09q1c
+``` sql
 SELECT fil_titulo FROM filmes WHERE fil_genero IN ('comedia','policial');
+```
+#### p09q1d
+``` sql
 SELECT cli_nome FROM clientes WHERE cli_nome NOT LIKE 'A' OR 'B';
 ```
 ## p12 (ativ)
+### p12q1
 ``` sql
-CREATE DATABASE a10p12;
-USE a10p12;
-
-CREATE TABLE alunos (
-aluno_cod int,
-aluno_nome varchar(100),
-aluno_endereco varchar(200),
-aluno_cidade varchar(100)
-);
-
-CREATE TABLE disciplina(
-dis_cod int,
-dis_nome varchar(100),
-dis_carga int,
-dis_professor varchar(100)
-);
-
-CREATE TABLE professores(
-prof_cod int,
-prof_nome varchar(100),
-prof_endereco varchar(200),
-prof_cidade varchar(100)
-);
-
-INSERT INTO alunos
-VALUES
-(1,'Joao','Rua da Li','São Paulo'),
-(10,'Maria','Avenida Paulista','São Paulo');
-
-INSERT INTO disciplina
-VALUES
-(1,'Matemática',60,'Sidarta'),
-(5,'Português',40,'Pascoale');
-
-INSERT INTO professores
-VALUES
-(1,'Fátima','Rua da Praia','Rio de Janeiro'),
-(5,'Roberto','Av. Sen. Salg Filho','Natal');
-
+USE a10sistEdu;
+```
+#### p12q1a
+``` sql
 SELECT prof_cod, prof_nome, prof_endereco FROM professores;
+```
+#### p12q1b
+``` sql
 SELECT * FROM alunos LIMIT 3;
+```
+#### p12q1c
+``` sql
 SELECT dis_nome, dis_professor FROM disciplina;
-
+```
+#### p12q1e
+``` sql
 SELECT * FROM disciplina WHERE dis_professor IS NULL;
+```
+#### p12q1f
+``` sql
 SELECT * FROM disciplina WHERE dis_cod BETWEEN 1 AND 5;
+```
+#### p12q1g
+``` sql
 SELECT * FROM alunos WHERE aluno_nome LIKE '%Silva';
 ```

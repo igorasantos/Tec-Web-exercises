@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.25, for Linux (x86_64)
 --
--- Host: localhost    Database: a10p12
+-- Host: localhost    Database: a09sistEdu
 -- ------------------------------------------------------
 -- Server version	5.7.25-0ubuntu0.18.04.2
 
@@ -61,7 +61,7 @@ CREATE TABLE `disciplina` (
 
 LOCK TABLES `disciplina` WRITE;
 /*!40000 ALTER TABLE `disciplina` DISABLE KEYS */;
-INSERT INTO `disciplina` VALUES (1,'Matemática',60,'Sidarta'),(5,'Português',40,'Pascoale');
+INSERT INTO `disciplina` VALUES (1,'Matemática',70,'Sidarta'),(5,'Português',50,'Pascoale');
 /*!40000 ALTER TABLE `disciplina` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -99,4 +99,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-11  5:13:01
+-- Dump completed on 2019-04-11  5:56:03

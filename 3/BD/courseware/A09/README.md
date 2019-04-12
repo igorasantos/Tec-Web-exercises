@@ -50,7 +50,7 @@ fil_preco NUMERIC(3,2)
 ```
 
 ## p05 (ativ)
-### q01
+### p05q1
 ``` sql
 CREATE DATABASE a09p05;
 USE a09p05;
@@ -116,28 +116,29 @@ VALUES
 
 ## p07 (ativ)
 ``` sql
+### p07q1
 USE a09locadora;
 ```
-### q01a
+### p07q1a
 ``` sql
 INSERT INTO filmes
 (fil_codigo, fil_titulo, fil_genero, fil_duracao, fil_situacao, fil_preco)
 VALUES
 (1, 'E o vento Levou', 'romance', '0:03:10', 'alugado', 5.00);
 ```
-### q01b
+### p07q1b
 ``` sql
 INSERT INTO filmes
 (fil_codigo, fil_titulo, fil_genero, fil_duracao, fil_situacao,fil_preco)
 VALUES
 (2, 'O silêncio dos inocentes', 'policial', '0:02:00', 'disponível', 02.50);
 ```
-### q01c
+### p07q1c
 ``` sql
 INSERT INTO filmes VALUES
 (3, 'Procurando Nemo', 'animação', '0:01:40','alugado', 02.50);
 ```
-### q01d
+### p07q1d
 ``` sql
 INSERT INTO filmes
 (fil_codigo, fil_titulo, fil_genero, fil_situacao, fil_duracao)
@@ -195,12 +196,12 @@ DELETE FROM pessoas WHERE pes_cidade = 'São Paulo' OR pes_cidade = 'Rio de Jane
 ```
 
 ## p13 (ativ)
-### q01
+### p13q1
 ``` sql
-CREATE DATABASE a09p13;
-USE a09p13;
+CREATE DATABASE a09sistEdu;
+USE a09sistEdu;
 ```
-### q02
+### p13q2
 ``` sql
 CREATE TABLE alunos (
 aluno_cod int,
@@ -223,32 +224,32 @@ prof_endereco varchar(200),
 prof_cidade varchar(100)
 );
 ```
-### q03a
+### p13q3a
 ``` sql
 INSERT INTO alunos
 VALUES
 (1,'Joao','Rua da Li','São Paulo'),
 (10,'Maria','Avenida Paulista','São Paulo');
 ```
-### q03b
+### p13q3b
 ``` sql
 INSERT INTO disciplina
 VALUES
 (1,'Matemática',60,'Sidarta'),
 (5,'Português',40,'Pascoale');
 ```
-### q03c
+### p13q3c
 ``` sql
 INSERT INTO professores
 VALUES
 (1,'Fátima','Rua da Praia','Rio de Janeiro'),
 (5,'Roberto','Av. Sen. Salg Filho','Natal');
 ```
-### q04
+### p13q4
 ``` sql
 UPDATE disciplina SET dis_carga = dis_carga + 10;
 ```
-### q05
+### p13q5
 ``` sql
 DELETE FROM disciplina WHERE dis_professor = 'Roberto';
 ```

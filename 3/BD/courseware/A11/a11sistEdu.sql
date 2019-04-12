@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.25, for Linux (x86_64)
 --
--- Host: localhost    Database: a09p13
+-- Host: localhost    Database: a11sistEdu
 -- ------------------------------------------------------
 -- Server version	5.7.25-0ubuntu0.18.04.2
 
@@ -61,7 +61,7 @@ CREATE TABLE `disciplina` (
 
 LOCK TABLES `disciplina` WRITE;
 /*!40000 ALTER TABLE `disciplina` DISABLE KEYS */;
-INSERT INTO `disciplina` VALUES (1,'Matemática',70,'Sidarta'),(5,'Português',50,'Pascoale');
+INSERT INTO `disciplina` VALUES (1,'Matemática',70,'Sidarta'),(5,'Português',50,'Pascoale'),(8,'Filosofia',30,'Sidarta'),(1,'Matemática',60,'Aristóteles');
 /*!40000 ALTER TABLE `disciplina` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -86,7 +86,7 @@ CREATE TABLE `professores` (
 
 LOCK TABLES `professores` WRITE;
 /*!40000 ALTER TABLE `professores` DISABLE KEYS */;
-INSERT INTO `professores` VALUES (1,'Fátima','Rua da Praia','Rio de Janeiro'),(5,'Roberto','Av. Sen. Salg Filho','Natal');
+INSERT INTO `professores` VALUES (1,'Fátima','Rua da Praia','Rio de Janeiro'),(5,'Roberto','Av. Sen. Salg Filho','Natal'),(10,'Erica','R. José Estáquio','Caicó');
 /*!40000 ALTER TABLE `professores` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -99,4 +99,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-08  9:36:16
+-- Dump completed on 2019-04-12  3:49:05
