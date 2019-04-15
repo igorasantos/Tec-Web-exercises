@@ -408,7 +408,7 @@ SELECT * FROM filmes;
 CREATE TABLE locacoes (
 loc_codigo INT NOT NULL AUTO_INCREMENT,
 loc_cl_cod INT NOT NULL,
-loc_fi_cod  INT NOT NULL,
+loc_fi_cod INT NOT NULL,
 loc_data DATE NOT NULL,
 PRIMARY KEY (loc_codigo),
 FOREIGN KEY (loc_cl_cod) REFERENCES clientes (cli_codigo),
