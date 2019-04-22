@@ -13,11 +13,11 @@ exit;
 ```
 In the Bash terminal:
 ``` bash
-mysqldump a16sistVendas | mysql a17sistVendas;
+mysqldump --routines a16sistVendas | mysql a17sistVendas;
 mysqldump a14locadora | mysql a17locadora;
-mysqldump a16folhaPagto | mysql a17folhaPagto;
+mysqldump --routines a16folhaPagto | mysql a17folhaPagto;
 mysqldump a13cineOnline | mysql a17cineOnline;
-mysqldump a16sistEdu | mysql a17sistEdu;
+mysqldump --routines a16sistEdu | mysql a17sistEdu;
 mysql
 ```
 ## p03

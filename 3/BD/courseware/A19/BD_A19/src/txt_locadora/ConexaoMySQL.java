@@ -8,7 +8,7 @@ import java.sql.Statement;
 import password.Pass;
 
 public class ConexaoMySQL {
-	public static String status = "Não conectou...";
+	//public static String status = "Não conectou...";
 	public ConexaoMySQL() {
 	}
 	public static Connection getConexaoMySQL() {

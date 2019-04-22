@@ -12,9 +12,9 @@ exit;
 ```
 In the Bash terminal:
 ``` bash
-mysqldump a15sistVendas | mysql a16sistVendas;
-mysqldump a15vids | mysql a16vids;
-mysqldump a15folhaPagto | mysql a16folhaPagto;
+mysqldump --routines a15sistVendas | mysql a16sistVendas;
+mysqldump --routines a15vids | mysql a16vids;
+mysqldump --routines a15folhaPagto | mysql a16folhaPagto;
 mysqldump a14sistEdu | mysql a16sistEdu;
 mysql
 ```
