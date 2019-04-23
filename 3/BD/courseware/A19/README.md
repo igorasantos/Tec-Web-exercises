@@ -11,7 +11,7 @@ exit;
 In the Bash terminal:
 ``` bash
 mysqldump a18locadora | mysql a19locadora;
-mysqldump a17sistEdu | mysql a19sistEdu;
+mysqldump --routines a17sistEdu | mysql a19sistEdu;
 mysql
 ```
 ## p04 onwards
