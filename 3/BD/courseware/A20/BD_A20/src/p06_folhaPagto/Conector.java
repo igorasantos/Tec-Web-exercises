@@ -1,4 +1,4 @@
-package p06_locadora;
+package p06_folhaPagto;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;

@@ -4,5 +4,6 @@ public class Main {
 		Disciplina d = new Disciplina();
 		d.listarDisciplinas();		
 		d.inserir(4, "Filosofia", 90);
+		d.listarDisciplinas();
 	}	
 }
