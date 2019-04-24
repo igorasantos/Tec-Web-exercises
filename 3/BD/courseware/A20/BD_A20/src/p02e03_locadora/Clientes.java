@@ -15,9 +15,14 @@ public class Clientes {
 			s = (Statement) connection.createStatement();
 	    	ResultSet r = null;
 		    r = s.executeQuery("SELECT * FROM clientes");
-			System.out.println("ID NOME");
+		    System.out.println("----------");
+		    System.out.println("ID - NOME - SALÁRIO");
 			while (r.next()){
-				System.out.println(r.getInt("cli_codigo") + "  " + r.getString("cli_nome"));
+				System.out.println(
+					r.getInt("cli_codigo")+" - "+
+					r.getString("cli_nome")+" - "+
+					r.getInt("cli_salario")
+				);
 			}
 			r.close();
 		} catch (SQLException e) {
@@ -30,9 +35,9 @@ public class Clientes {
 		try {
 			s = (Statement) connection.createStatement();			
 	    	int updateCount = s.executeUpdate(
-	    		"INSERT INTO clientes" +
-	    		"(cli_codigo, cli_salario, cli_nome, cli_cpf, cli_profissao,cli_sexo)"+
-				"VALUES"+
+	    		"INSERT INTO clientes " +
+	    		"(cli_codigo, cli_salario, cli_nome, cli_cpf, cli_profissao,cli_sexo) "+
+				"VALUES "+
 	    		"(9, 6000 , 'Nelio', '012345678-20', 'Professor', 'M');"
 	    	);					
 		} catch (SQLException e) {
@@ -46,8 +51,8 @@ public class Clientes {
 		try {
 	    	s = (Statement) connection.createStatement();		    
 	    	int updateCount = s.executeUpdate(
-	    		"UPDATE clientes" +
-	    		"SET cli_salario = 600"+
+	    		"UPDATE clientes " +
+	    		"SET cli_salario = 600 "+
 				"WHERE cli_codigo = 9;"
 	    	);		
 		} catch (SQLException e) {
@@ -61,7 +66,7 @@ public class Clientes {
 		try {
 	    	s = (Statement) connection.createStatement();		    
 	    	int updateCount = s.executeUpdate(
-	    		"DELETE FROM clientes" +
+	    		"DELETE FROM clientes " +
 				"WHERE cli_codigo = 9;"
 	    	);		
 		} catch (SQLException e) {

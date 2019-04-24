@@ -33,7 +33,7 @@ INSERT INTO clientes VALUES (30,'Rapaz da TI','123456789','M','Técnico de TI',1
 ```
 
 ## p06
-###v03
+### v03
 ``` sql
 USE a20vids;
 INSERT INTO autores_obras VALUES (20,10,1);
