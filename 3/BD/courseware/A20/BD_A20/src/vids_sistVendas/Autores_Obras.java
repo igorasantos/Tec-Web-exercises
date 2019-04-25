@@ -1,4 +1,5 @@
 package vids_sistVendas;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,26 +16,37 @@ public class Autores_Obras {
 		Connection connection = Conector.getConector("localhost", "a20vids", "root", password);
 		try {
 			s = (Statement) connection.createStatement();		
-			ResultSet r = null;
-			r = s.executeQuery("SELECT * FROM vw_aut_obras_inner_join");
+			ResultSet rs = null;
+			rs = s.executeQuery("SELECT * FROM vw_aut_obras_inner_join");
 			System.out.println("**************");
 			System.out.println("Título da Obra - Nome do Autor");
 			System.out.println("--------------");			
-			while (r.next()) {
-				System.out.println(r.getString("obr_titulo")+" - "+r.getString("aut_nome"));
+			while (rs.next()) {
+				System.out.println(
+					rs.getString("obr_titulo")+" - "+
+					rs.getString("aut_nome")
+				);
 			}
-			r.close();
+			rs.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
-    public void spExcluiAOComParam(int e_cod){
-		PreparedStatement s = null;
+//    public void spExcluiAOComParam(int e_cod)
+//		try {
+//		} catch (SQLException e) {
+//		   e.printStackTrace();
+//		}
+//	}
+    public void spExcluiAOComParam(int e_cod){		
+		String query = "{CALL sp_exclui_ao(?)}";
+		CallableStatement cs = null;
 		Connection connection = Conector.getConector("localhost", "a20vids", "root", password);
 		try {
-			s = (PreparedStatement) connection.prepareCall("{CALL sp_exclui_ao(?);}");
-			s.setInt(1, e_cod);
-			s.executeQuery();
+			cs = (CallableStatement) connection.prepareCall(query);
+			cs.setInt(1, e_cod);
+			cs.executeQuery();
+			cs.close();			
 		} catch (SQLException e) {
 		   e.printStackTrace();
 		}

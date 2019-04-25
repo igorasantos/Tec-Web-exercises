@@ -39,7 +39,6 @@ CREATE TABLE `clientes` (
 
 LOCK TABLES `clientes` WRITE;
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
-INSERT INTO `clientes` VALUES (1,'José da Silva','123456789-10','M','Administrador',3500.00),(2,'Maria da Silva','012345678-99','F','Arquiteta',900.00),(3,'Francisco da Silva','109876543-21','M','Dev Web',9000.00),(4,'Francisca da Silva',NULL,'F','Programadora',4500.00),(5,'Rodolfo','123456789-01','M','Estudante',400.00),(6,'Ana','987654321-12','F','Estudante',800.00),(30,'Rapaz da TI','123456789','M','Técnico de TI',1500.00);
 /*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -85,7 +84,7 @@ CREATE TABLE `loc_gps` (
   `loc_data` date DEFAULT NULL,
   PRIMARY KEY (`loc_gp_codigo`),
   KEY `loc_cl_cod` (`loc_cl_cod`),
-  CONSTRAINT `loc_gps_ibfk_1` FOREIGN KEY (`loc_cl_cod`) REFERENCES `clientes` (`cli_codigo`)
+  CONSTRAINT `loc_gps_ibfk_1` FOREIGN KEY (`loc_cl_cod`) REFERENCES `clientes` (`cli_codigo`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -95,7 +94,6 @@ CREATE TABLE `loc_gps` (
 
 LOCK TABLES `loc_gps` WRITE;
 /*!40000 ALTER TABLE `loc_gps` DISABLE KEYS */;
-INSERT INTO `loc_gps` VALUES (1,1,'2019-01-01'),(2,1,'2019-01-15'),(3,3,'2019-02-01'),(4,4,'2019-03-01'),(5,3,'2019-03-15'),(6,5,'2019-04-15'),(7,1,'2019-05-01'),(8,6,'2019-05-15'),(9,4,'2019-06-01'),(10,3,'2019-06-15'),(11,6,'2019-07-01'),(12,6,'2019-08-15');
 /*!40000 ALTER TABLE `loc_gps` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,8 +111,8 @@ CREATE TABLE `locacoes` (
   PRIMARY KEY (`loc_codigo`),
   KEY `loc_fi_cod` (`loc_fi_cod`),
   KEY `loc_gp` (`loc_gp`),
-  CONSTRAINT `locacoes_ibfk_2` FOREIGN KEY (`loc_fi_cod`) REFERENCES `filmes` (`fil_codigo`),
-  CONSTRAINT `locacoes_ibfk_3` FOREIGN KEY (`loc_gp`) REFERENCES `loc_gps` (`loc_gp_codigo`)
+  CONSTRAINT `locacoes_ibfk_1` FOREIGN KEY (`loc_fi_cod`) REFERENCES `filmes` (`fil_codigo`) ON DELETE CASCADE,
+  CONSTRAINT `locacoes_ibfk_2` FOREIGN KEY (`loc_gp`) REFERENCES `loc_gps` (`loc_gp_codigo`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -124,7 +122,6 @@ CREATE TABLE `locacoes` (
 
 LOCK TABLES `locacoes` WRITE;
 /*!40000 ALTER TABLE `locacoes` DISABLE KEYS */;
-INSERT INTO `locacoes` VALUES (1,1,3),(2,2,5),(3,3,2),(4,4,2),(5,4,4),(6,5,6),(7,6,6),(8,6,3),(9,7,7),(10,8,9),(11,9,10),(12,10,8),(13,11,9),(14,12,8),(15,12,3),(16,12,11);
 /*!40000 ALTER TABLE `locacoes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -194,4 +191,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-23  0:30:24
+-- Dump completed on 2019-04-24 23:45:35

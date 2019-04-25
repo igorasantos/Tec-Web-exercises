@@ -62,4 +62,12 @@ SELECT * FROM vw_cli_dados_pessoais;
 END;
 |
 DELIMITER ;
+
+ALTER TABLE loc_gps DROP FOREIGN KEY loc_gps_ibfk_1;
+ALTER TABLE locacoes DROP FOREIGN KEY locacoes_ibfk_2;
+ALTER TABLE locacoes DROP FOREIGN KEY locacoes_ibfk_3;
+
+ALTER TABLE loc_gps ADD FOREIGN KEY (loc_cl_cod) REFERENCES clientes (cli_codigo) ON DELETE CASCADE;
+ALTER TABLE locacoes ADD FOREIGN KEY (loc_fi_cod) REFERENCES filmes (fil_codigo) ON DELETE CASCADE;
+ALTER TABLE locacoes ADD FOREIGN KEY (loc_gp) REFERENCES loc_gps (loc_gp_codigo) ON DELETE CASCADE;
 ```

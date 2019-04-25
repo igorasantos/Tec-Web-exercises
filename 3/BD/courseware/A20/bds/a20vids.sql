@@ -64,7 +64,7 @@ CREATE TABLE `autores_obras` (
 
 LOCK TABLES `autores_obras` WRITE;
 /*!40000 ALTER TABLE `autores_obras` DISABLE KEYS */;
-INSERT INTO `autores_obras` VALUES (1,1,1),(2,2,2),(3,3,2),(4,4,3),(5,5,4),(6,6,4),(7,7,4),(8,8,5),(9,8,6),(20,10,1);
+INSERT INTO `autores_obras` VALUES (1,1,1),(2,2,2),(3,3,2),(4,4,3),(5,5,4),(6,6,4),(7,7,4),(8,8,5),(9,8,6);
 /*!40000 ALTER TABLE `autores_obras` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -450,4 +450,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-23  0:30:47
+-- Dump completed on 2019-04-24 23:46:32

@@ -61,7 +61,7 @@ CREATE TABLE `disciplinas` (
 
 LOCK TABLES `disciplinas` WRITE;
 /*!40000 ALTER TABLE `disciplinas` DISABLE KEYS */;
-INSERT INTO `disciplinas` VALUES (1,'Matemática',70),(5,'Português',50),(6,'Biologia',60),(7,'História',90);
+INSERT INTO `disciplinas` VALUES (1,'Matemática',70),(4,'Filosofia',90),(5,'Português',50),(6,'Biologia',60),(7,'História',90);
 /*!40000 ALTER TABLE `disciplinas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -430,4 +430,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-23  0:30:36
+-- Dump completed on 2019-04-24 23:46:19

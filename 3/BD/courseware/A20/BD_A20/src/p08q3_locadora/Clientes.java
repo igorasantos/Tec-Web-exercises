@@ -1,4 +1,5 @@
 package p08q3_locadora;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,44 +10,62 @@ public class Clientes {
 	Pass p = new Pass();
     String password = p.getPassword();
     
-	public void consultar() {	    
+    public void consultar() {	    
 	    Connection connection = Conector.getConector("localhost", "a20locadora", "root", password);
-	    PreparedStatement s = null;	    
+	    PreparedStatement ps = null;	    
 		try {
-			s = (PreparedStatement) connection.prepareStatement(
+			ps = (PreparedStatement) connection.prepareStatement(
 				"SELECT * FROM clientes"
 			);
-	    	ResultSet r = null;
-		    r = s.executeQuery();
-			System.out.println("ID NOME");
-			while (r.next()){
-				System.out.println(r.getInt("cli_codigo") + "  " + r.getString("cli_nome"));
+	    	ResultSet rs = null;
+		    rs = ps.executeQuery();
+		    System.out.println("----------");
+		    System.out.println("ID - NOME - SALÁRIO");
+			while (rs.next()){
+				System.out.println(
+					rs.getInt("cli_codigo")+" - "+
+					rs.getString("cli_nome")+" - "+
+					rs.getInt("cli_salario")
+				);
 			}
-			r.close();
+			rs.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 	// p08q3a
-	public void removerTodos(){
+    public void removerTodos(){
 		Connection connection = Conector.getConector("localhost", "a20locadora", "root", password);		
-		PreparedStatement s = null;
+		PreparedStatement ps = null;
 		try {
-	    	s = (PreparedStatement) connection.prepareStatement(
-	    		"DELETE FROM clientes;"
-	    	);
-	    	int updateCount = s.executeUpdate();
+	    	ps = (PreparedStatement) connection.prepareStatement(
+	    		"DELETE FROM clientes"
+	    	);    
+	    	int updateCount = ps.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 	// p08q3b
-	public void spListResumida(){
-		PreparedStatement s = null;
+	public void spListaResumida(){		
+		String query = "{CALL sp_cl_dados_resumidos()}";
+		ResultSet rs = null;		
+		CallableStatement cs = null;
 		Connection connection = Conector.getConector("localhost", "a20locadora", "root", password);
 		try {
-			s = (PreparedStatement) connection.prepareCall("{CALL sp_cl_dados_resumidos();}");
-			s.executeQuery();
+			cs = (CallableStatement) connection.prepareCall(query);
+			rs = cs.executeQuery();
+			System.out.println("----------");
+		    System.out.println("NOME - CPF - SEXO - PROFISSÃO");
+			while (rs.next()){
+				System.out.println(
+					rs.getString("Nome")+" - "+
+					rs.getString("CPF")+" - "+
+					rs.getString("Sexo")+" - "+
+					rs.getString("Profissão")
+				);
+			}
+			rs.close();			
 		} catch (SQLException e) {
 		   e.printStackTrace();
 		}
