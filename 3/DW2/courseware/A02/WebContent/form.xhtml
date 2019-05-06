@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>DW2 A02 - Formulário</title>
+</h:head>
+
+<h:body>
+	<h:messages/>
+	<h:form>
+		<table> 
+			<tr>
+				<td>Nome:</td>
+				<td>
+					<h:inputText value="#{cadastroMBean.pessoa.nome}"
+						size="50" required="true"
+						requiredMessage="Nome: Campo obrigatório."
+					/>
+				</td>
+			</tr> 
+			<tr> 
+				<td>Endereço:</td>
+				<td>
+					<h:inputTextarea value="#{cadastroMBean.pessoa.endereco}"
+						cols="50" rows="4" required="true"
+						requiredMessage="Endereço: Campo obrigatório."
+					/>
+				</td> 
+			</tr>
+			<tr> 
+				<td>Data de nascimento:</td>
+				<td>
+					<h:inputText value="#{cadastroMBean.pessoa.dataNascimento}" size="5" maxlength="10">
+						<f:convertDateTime pattern="dd/MM/yyyy" /> 
+					</h:inputText>
+				</td>
+			</tr>
+			<tr> 
+				<td>Sexo:</td> 
+				<td> 
+					<h:selectOneRadio value="#{cadastroMBean.pessoa.sexo}"> 
+						<f:selectItem itemValue="M" itemLabel="Masculino" /> 
+						<f:selectItem itemValue="F" itemLabel="Feminino" /> 
+					</h:selectOneRadio> 
+				</td> 
+			</tr>
+			<tr>
+				<td colspan="2" align="center"> 
+					<h:commandButton value="Cadastrar" action="#{cadastroMBean.cadastrar}" />
+				</td>
+			</tr>
+		</table>
+	</h:form>
+</h:body>
+
+</html>

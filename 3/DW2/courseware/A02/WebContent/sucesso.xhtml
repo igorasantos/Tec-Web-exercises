@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>DW2 A02 - Sucesso</title>
+</h:head>
+<h:body>
+	<table> 
+		<tr> 
+			<td>Nome:</td>
+			<td>
+				<h:outputText value="#{cadastroMBean.pessoa.nome}" />
+			</td>
+		</tr> 
+		<tr> 
+			<td>Endereço:</td> 
+			<td>
+				<h:outputText value="#{cadastroMBean.pessoa.endereco}"/>
+			</td> 
+		</tr> 
+		<tr> 
+			<td>Data de nascimento:</td> 
+			<td> 
+				<h:outputText value="#{cadastroMBean.pessoa.dataNascimento}"> 
+					<f:convertDateTime pattern="dd/MM/yyyy"/> 
+				</h:outputText> 
+			</td> 
+		</tr> 
+		<tr> 
+			<td>Sexo:</td> 
+			<td> 
+				<h:outputText value="#{cadastroMBean.pessoa.sexo}"/> 
+			</td> 
+		</tr>
+	</table>
+</h:body> 
+</html>
