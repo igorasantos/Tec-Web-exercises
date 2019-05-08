@@ -1,0 +1,45 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>Cliente cadastrado com sucesso!</title>
+</h:head>
+
+<h:body>
+    <table> 
+        <tr>
+            <td>Nome: </td>
+            <td><h:outputText value="#{clienteMBean.cliente.nome}" /> </td>
+        </tr>
+        <tr>
+            <td>CPF: </td>
+            <td><h:outputText value="#{clienteMBean.cliente.cpf}" /> </td>
+        </tr>
+        <tr>
+            <td>Endereço: </td>
+            <td><h:outputText value="#{clienteMBean.cliente.endereco}" /> </td>
+        </tr>
+        <tr>
+            <td> Data de nascimento: </td>
+            <td>
+                <h:outputText value="#{clienteMBean.cliente.dataNascimento}">
+                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                </h:outputText>
+            </td>
+        </tr>
+        <tr>
+            <td> Sexo: </td>
+            <td>
+                <h:outputText value="#{clienteMBean.cliente.sexo}" />
+            </td>
+        </tr>
+        <tr>
+            <td> Telefone/Celular: </td>
+            <td>
+             <h:outputText value="#{clienteMBean.cliente.telefone}" />
+             <h:outputText value="#{clienteMBean.cliente.celular}" />
+            </td>
+        </tr>
+    </table>
+</h:body>
+</html>

@@ -6,7 +6,7 @@ import br.ufrn.imd.tec.dw2.a02.model.Pessoa;
 @ManagedBean
 @SessionScoped
 public class CadastroMBean {
-	Pessoa pessoa;
+	private Pessoa pessoa;
 	public CadastroMBean() {
 		pessoa = new Pessoa();
 	}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>DW2 A03 - Cadastro de Cliente</title>
+</h:head>
+
+<h:body>
+	<h:messages/>
+	<h:form>
+		<table> 
+			<tr>
+				<td>Nome:* </td>
+				<td>
+					<h:inputText value="#{clienteMBean.cliente.nome}"
+						size="50" required="true"
+						requiredMessage="Nome: Campo obrigatório."
+					/>
+				</td>
+			</tr>
+			<tr>
+				<td> CPF:* </td>
+				<td>
+					<h:inputText value="#{clienteMBean.cliente.cpf}" size="12" maxlength="11" required="true" requiredMessage="CPF: Campo obrigatório.">
+						<f:validator validatorId="validadorCPF" />
+					</h:inputText> 
+				</td>
+			</tr>
+			<tr> 
+				<td>Data de nascimento:*</td>
+				<td>
+					<h:inputText value="#{clienteMBean.cliente.dataNascimento}" size="5" maxlength="10" required="true" requiredMessage="Data de nascimento: Campo obrigatório.">
+						<f:convertDateTime pattern="dd/MM/yyyy" /> 
+					</h:inputText>
+				</td>
+			</tr> 
+			<tr> 
+				<td>Endereço:*</td>
+				<td>
+					<h:inputTextarea value="#{clienteMBean.cliente.endereco}"
+						cols="50" rows="4" required="true"
+						requiredMessage="Endereço: Campo obrigatório."
+					/>
+				</td> 
+			</tr>
+			
+			<tr> 
+				<td>Sexo:*</td> 
+				<td> 
+					<h:selectOneRadio value="#{clienteMBean.cliente.sexo}" required="true" requiredMessage="Sexo: Campo obrigatório."> 
+						<f:selectItem itemValue="M" itemLabel="Masculino" /> 
+						<f:selectItem itemValue="F" itemLabel="Feminino" /> 
+					</h:selectOneRadio> 
+				</td> 
+			</tr>
+			<tr>
+				<td> Telefone: </td>
+				<td> <h:inputText value="#{clienteMBean.cliente.telefone}" /> </td>
+			</tr>
+			<tr>
+				<td> Celular: </td>
+				<td> <h:inputText value="#{clienteMBean.cliente.celular}" /> </td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<h:commandButton value="Cadastrar" action="#{clienteMBean.cadastrar}" />
+				</td>
+			</tr> 
+		</table>
+		* : Campos obrigatórios.
+	</h:form>
+</h:body>
+
+</html>
