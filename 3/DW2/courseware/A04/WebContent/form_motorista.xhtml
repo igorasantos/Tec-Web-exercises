@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>DW2 A04 - Novo Motorista</title>
+</h:head>
+
+<h:body>
+	<h:messages/>
+	<h1>Novo Motorista</h1>
+	<h:form >
+		<fieldset>
+			<p>Nome: <h:inputText value="#{motoristaMBean.motorista.nome}" size="50" required="true" requiredMessage="Nome: Campo obrigatório." /> </p>
+			<p>CPF: <h:inputText value="#{motoristaMBean.motorista.cpf}" size="20" required="true" requiredMessage="CPF: Campo obrigatório." /> </p>
+			<p>Matrícula: <h:inputText value="#{motoristaMBean.motorista.matricula}" size="20" required="true" requiredMessage="Matrícula: Campo obrigatório." /> </p>
+			<p>
+				CNH: <h:inputText value="#{motoristaMBean.motorista.registroCnh}" size="20" required="true" requiredMessage="CNH: Campo obrigatório." /> 
+				Cat.: <h:inputText value="#{motoristaMBean.motorista.categoriaCnh}" size="10" required="true" requiredMessage="Cat.: Campo obrigatório." />
+			</p>
+			<p>Endereço: <h:inputTextarea value="#{motoristaMBean.motorista.endereco}" size="50" required="true" requiredMessage="Endereço: Campo obrigatório." /> </p>
+			<p>
+				<h:commandButton value="Cadastrar" action="#{motoristaMBean.cadastrar}" />
+				<h:commandButton value="Voltar" action="#{motoristaMBean.voltar}" immediate="true"/>
+			</p>
+		</fieldset>	
+	</h:form>
+</h:body>
+</html>

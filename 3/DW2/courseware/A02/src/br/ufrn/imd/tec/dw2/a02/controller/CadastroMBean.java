@@ -1,4 +1,4 @@
-package br.ufrn.imd.tec.dw2.a02.controllers;
+package br.ufrn.imd.tec.dw2.a02.controller;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import br.ufrn.imd.tec.dw2.a02.model.Pessoa;

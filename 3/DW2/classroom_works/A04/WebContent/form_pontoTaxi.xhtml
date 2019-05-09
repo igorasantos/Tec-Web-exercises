@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>DW2 A04 TrabPresenc</title>
+</h:head>
+
+<h:body>
+	<h:messages/>
+	<h1>Cadastro de novo ponto de táxi</h1>
+	<h:form >
+		<fieldset>
+			<h:outputLabel for="endereco" value="Endereço"/>
+			<h:inputText name="endereco" value="#{pontoTaxiMBean.pontoTaxi.endereco}"/>
+			<br/>
+			<h:outputLabel for="hora_inic" value="Horário de Início"/>
+			<h:inputText name="hora_inic" value="#{pontoTaxiMBean.pontoTaxi.horaInicio}"/>
+			<br/>
+			<h:outputLabel for="hora_fim" value="Horário de Fim"/>
+			<h:inputText name="hora_fim" value="#{pontoTaxiMBean.pontoTaxi.horaFim}"/>
+			<br/>
+			
+			<h:outputLabel for="motorista" value="Motorista"/>
+			<h:selectOneMenu name="motorista" value="#{pontoTaxiMBean.pontoTaxi.motorista.nome}">
+				<f:selectItems value="#{motoristaMBean.motoristas}" var="motorista" itemLabel="#{motorista.nome}"/> 
+			</h:selectOneMenu>	
+			<br/>
+			
+			<h:commandButton value="Registrar" action="#{pontoTaxiMBean.cadastrar}"/>
+			<h:commandButton value="Listar" action="#{pontoTaxiMBean.listar}" immediate="true"/>
+			<h:commandButton value="Voltar" action="#{pontoTaxiMBean.voltar}" immediate="true"/>			
+		</fieldset>	
+	</h:form>
+</h:body>
+</html>

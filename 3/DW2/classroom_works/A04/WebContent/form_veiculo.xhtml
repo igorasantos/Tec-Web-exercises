@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>DW2 A04 TrabPresenc</title>
+</h:head>
+
+<h:body>
+	<h:messages/>
+	<h1>Cadastro de novo veículo</h1>
+	<h:form >
+		<fieldset>
+			<h:outputLabel for="placa" value="Placa"/>
+			<h:inputText name="placa" value="#{veiculoMBean.veiculo.placa}" required="true" requiredMessage="Placa: Campo obrigatório." />
+			<br/>
+			<h:outputLabel for="ano" value="Ano"/>
+			<h:inputText name="ano" value="#{veiculoMBean.veiculo.ano}" required="true" requiredMessage="Ano: Campo obrigatório."/>
+			<br/>
+			<h:outputLabel for="placa" value="Modelo"/>
+			<h:inputText name="placa" value="#{veiculoMBean.veiculo.modelo}" required="true" requiredMessage="Modelo: Campo obrigatório."/>			
+			<br/>
+			<h:outputLabel for="placa" value="Chassi"/>
+			<h:inputText name="placa" value="#{veiculoMBean.veiculo.chassi}" required="true" requiredMessage="Chassi: Campo obrigatório."/>
+			<br/>
+			<h:commandButton value="Registrar" action="#{veiculoMBean.cadastrar}"/>
+			<h:commandButton value="Voltar" action="#{veiculoMBean.voltar}" immediate="true"/>			
+		</fieldset>	
+	</h:form>
+</h:body>
+</html>

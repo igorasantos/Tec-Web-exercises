@@ -1,0 +1,34 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>DW2 A04 TrabPresenc</title>
+</h:head>
+
+<h:body>
+	<h:form>
+		<h:messages/>
+		<h1>Lista de Pontos de Táxi</h1>
+		<h:dataTable value="#{pontoTaxiMBean.pontosTaxi}" var="pontosTaxi" border="1">
+			<h:column>
+				<f:facet name="header">Endereço</f:facet>
+				#{pontosTaxi.endereco}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Horário de Início</f:facet>
+				#{pontosTaxi.horaInicio}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Horário de Fim</f:facet>
+				#{pontosTaxi.horaFim}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Motorista Reponsável</f:facet>
+				#{pontosTaxi.motorista.nome}
+			</h:column>			
+		</h:dataTable>
+		<h:commandLink action="#{pontoTaxiMBean.voltar}" value="Voltar"/>
+	</h:form>
+</h:body>
+</html>

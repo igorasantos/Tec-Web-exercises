@@ -1,0 +1,47 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>DW2 A04 - Novo Ônibus</title>
+</h:head>
+
+<h:body>
+	<h:messages/>
+	<h1>Novo Ônibus</h1>
+	<h:form >
+		<fieldset>
+			<p>
+				Marca: <h:inputText value="#{onibusMBean.onibus.marca}" size="20" required="true" requiredMessage="Marca: Campo obrigatório." />
+				Ano: <h:inputText value="#{onibusMBean.onibus.ano}" size="5" required="true" requiredMessage="Ano Campo obrigatório." />
+			</p>
+			<p>Modelo: <h:inputText value="#{onibusMBean.onibus.modelo}" size="50" required="true" requiredMessage="Modelo: Campo obrigatório." /> </p>
+			<p>Empresa:
+				<h:selectOneMenu value="#{onibusMBean.onibus.empresa.razaoSocial}">
+					<f:selectItems value="#{empresaMBean.empresas}" var="empr" itemLabel="#{empr.razaoSocial}" /> 
+				</h:selectOneMenu>	 
+			</p>
+			<p>Motorista:
+				<h:selectOneMenu value="#{onibusMBean.onibus.motorista.nome}">
+					<f:selectItems value="#{motoristaMBean.motoristas}" var="motorist" itemLabel="#{motorist.nome}"/> 
+				</h:selectOneMenu>	
+			</p>
+			<p>Cobrador:
+				<h:selectOneMenu value="#{onibusMBean.onibus.cobrador.nome}">
+					<f:selectItems value="#{cobradorMBean.cobradores}" var="cobrad" itemLabel="#{cobrad.nome}"/>
+				</h:selectOneMenu>	
+			</p>
+			<p>Linha:
+				<h:selectOneMenu value="#{onibusMBean.onibus.linha.ident}">
+					<f:selectItems value="#{linhaMBean.linhas}" var="linh" itemLabel="#{linh.ident}"/> 
+				</h:selectOneMenu>	
+			</p>
+			<p>
+				<h:commandButton value="Cadastrar" action="#{onibusMBean.cadastrar}" />
+				<h:commandButton value="Listar" action="#{onibusMBean.listar}" immediate="true"/>
+				<h:commandButton value="Voltar" action="#{onibusMBean.voltar}" immediate="true"/> 
+			</p>
+		</fieldset>	
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,17 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>DW2 A04 TrabPresenc</title>
+</h:head>
+<h:body>
+	<h1>SCFT - Sistema de Controle de Frota de Táxi</h1>	
+	<h2>Dados:</h2>
+	<h:form>
+		<h:commandLink action="#{veiculoMBean.entrarCadastro}" value="Cadastrar Veículo" immediate="true"/> <br/>
+		<h:commandLink action="#{motoristaMBean.entrarCadastro}" value="Cadastrar Motorista" immediate="true"/> <br/>
+		<h:commandLink action="#{pontoTaxiMBean.entrarCadastro}" value="Cadastrar Ponto de Táxi" immediate="true"/> <br/>
+		<h:commandLink action="#{pontoTaxiMBean.listar}" value="Listar Pontos de Táxi" immediate="true"/>
+	</h:form>
+</h:body>
+</html>

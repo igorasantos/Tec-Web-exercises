@@ -1,0 +1,23 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>DW2 A04 - Nova Empresa</title>
+</h:head>
+
+<h:body>
+	<h:messages/>
+	<h1>Nova Empresa</h1>
+	<h:form >
+		<fieldset>
+			 <p>CNPJ: <h:inputText value="#{empresaMBean.empresa.cnpj}" size="50" required="true" requiredMessage="CPNJ: Campo obrigatório." /></p>
+             <p>Razão Social: <h:inputText value="#{empresaMBean.empresa.razaoSocial}" size="50" required="true" requiredMessage="Razão social: Campo obrigatório." /> </p>
+             <p>
+	             <h:commandButton value="Cadastrar" action="#{empresaMBean.cadastrar}" />
+	             <h:commandButton value="Voltar" action="#{empresaMBean.voltar}" immediate="true"/>
+             </p>		
+		</fieldset>	
+	</h:form>
+</h:body>
+</html>

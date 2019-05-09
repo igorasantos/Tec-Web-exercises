@@ -1,4 +1,4 @@
-package br.ufrn.imd.tec.dw2.a03.validators;
+package br.ufrn.imd.tec.dw2.a03.validator;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;

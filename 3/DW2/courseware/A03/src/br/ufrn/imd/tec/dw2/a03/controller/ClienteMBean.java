@@ -1,4 +1,4 @@
-package br.ufrn.imd.tec.dw2.a03.controllers;
+package br.ufrn.imd.tec.dw2.a03.controller;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;

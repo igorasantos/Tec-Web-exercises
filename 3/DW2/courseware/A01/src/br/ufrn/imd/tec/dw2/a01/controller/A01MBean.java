@@ -1,4 +1,4 @@
-package br.ufrn.imd.tec.dw2.a01.controllers;
+package br.ufrn.imd.tec.dw2.a01.controller;
 import javax.faces.bean.ManagedBean;
 @ManagedBean
 public class A01MBean {

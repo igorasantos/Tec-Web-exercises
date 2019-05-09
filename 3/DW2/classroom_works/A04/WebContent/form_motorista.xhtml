@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>DW2 A04 TrabPresenc</title>
+</h:head>
+
+<h:body>
+	<h:messages/>
+	<h1>Cadastro de novo motorista</h1>
+	<h:form >
+		<fieldset>
+			<h:outputLabel for="nome" value="Nome"/>
+			<h:inputText name="nome" value="#{motoristaMBean.motorista.nome}"/>
+			<br/>
+			<h:outputLabel for="endereco" value="Endereço"/>
+			<h:inputText name="endereco" value="#{motoristaMBean.motorista.endereco}"/>
+			<br/>
+			
+			<h:outputLabel for="veiculo" value="Veículo"/>
+			<h:selectOneMenu name="veiculo" value="#{motoristaMBean.motorista.veiculo.placa}">
+				<f:selectItems value="#{veiculoMBean.veiculos}" var="veiculo" itemLabel="#{veiculo.placa}"/> 
+			</h:selectOneMenu>			
+			<br/>
+						
+			<h:commandButton value="Registrar" action="#{motoristaMBean.cadastrar}"/>
+			<h:commandButton value="Voltar" action="#{motoristaMBean.voltar}" immediate="true"/>			
+		</fieldset>	
+	</h:form>
+</h:body>
+</html>
