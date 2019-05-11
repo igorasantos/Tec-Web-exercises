@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Modelo Ajax</title>
+</head>
+<body>
+
+	<script type="text/javascript">	
+		// instanciar
+		// função  para tratar a resposta
+		// abrir uma conexão com sucesso
+		// enviar os dados para o servidor
+		/*
+		function sendViaGet(){
+			var url = "/AulasAjax1/Controlador/Ajax/Categoria";
+			
+			// instanciar
+			var ajaxReq = new XMLHttpRequest();
+			
+			// concatenção da URL (já que o método http será get)
+			url += "?categoria=" + document.getElementById("campoCategoria").value;
+			
+			// função para tratar a resposta, acompanhando cada mudança do readyState					
+			ajaxReq.onreadystatechange = function() {
+				if (ajaxReq.readyState == 4 && ajaxReq.status == 200) {
+					var text = ajaxReq.responseText;
+					var livros = text.split(';');
+					var campoLivro = document.getElementById("campoLivro");
+					campoLivro.length = 0;
+					for(var i=0; i<livros.length; i++){
+						if(livros[i].length>0){
+							campoLivro.options[campoLivro.length] = new Option(livros[i], livros[i]);
+						}
+					}
+				}
+			};
+			
+			// abrir conexão assíncrona
+			ajaxReq.open("GET", url, true);
+						
+			// enviar - se o método é get, deve-se passar argumento null
+			ajaxReq.send(null);
+		}
+		function sendViaPost(){
+			var url = "/AulasAjax1/Controlador/Ajax/Categoria";
+			
+			// instanciar
+			var ajaxReq = new XMLHttpRequest();
+			
+			// armazenamento dos dados (já que o método http será post)
+			var data = "categoria=" + document.getElementById("campoCategoria").value;
+			
+			// função para tratar a resposta - rever aqui					
+			ajaxReq.onreadystatechange = function() {
+				if (ajaxReq.readyState == 4 && ajaxReq.status == 200) {
+					var text = ajaxReq.responseText;
+					var livros = text.split(';');
+					var campoLivro = document.getElementById("campoLivro");
+					campoLivro.length = 0;
+					for(var i=0; i<livros.length; i++){
+						if(livros[i].length>0){
+							campoLivro.options[campoLivro.length] = new Option(livros[i], livros[i]);
+						}
+					}
+				}
+			};	
+			
+			// abrir conexão assíncrona
+			ajaxReq.open("POST", url, true);
+			
+			// definir cabeçalhos HTTP enviados ao servidor
+			ajaxReq.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+			
+			// enviar - se o método é post, deve-se passar como argumento os dados
+			ajaxReq.send(data);
+		}
+		*/
+	</script>
+
+	<p>
+	<select id="campoCategoria" name="categoria" size="5" onchange="send()">
+	   <option value="ficcao">ficcao</option>
+	   <option value="nao-ficcao">nao-ficcao</option>
+	   <option value="informatica">informatica</option>
+	   <option value="auto-ajuda">auto-ajuda</option>
+	</select>
+	<select id="campoLivro" name="livro" size="5" style="width: 200px;">
+	</select>
+	</p>
+
+</body>
+</html>

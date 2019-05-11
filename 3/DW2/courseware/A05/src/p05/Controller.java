@@ -20,7 +20,6 @@ public class Controller extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String selected = request.getParameter("categoria");
 		PrintWriter out = response.getWriter();
-		//response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		if (selected.equals("auto-ajuda")) {
 			out.println(
