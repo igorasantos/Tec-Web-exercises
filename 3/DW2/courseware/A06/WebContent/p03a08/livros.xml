@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<livros>
+	<livro nome="A Cabana" isbn="8599296361">		
+		<editora>SEXTANTE FICÇAO</editora>
+		<edicao>1ª Edição - 2008 </edicao>		
+		<autores>
+			<autor>YOUNG, WILLIAM P.</autor>
+		</autores>		
+		<preco>12,45</preco>		
+		<sinopse>
+			A filha mais nova de Mackenzie Allen Philip foi raptada
+			durante as férias em família e há evidências de que ela foi
+			brutalmente assassinada e abandonada numa cabana. Quatro anos mais
+			tarde, Mack recebe uma nota suspeita, aparentemente vinda de Deus,
+			convidando-o para voltar àquela cabana e passar o fim de semana.
+			Ignorando alertas de que poderia ser uma cilada, ele segue numa tarde
+			de inverno e volta ao cenário de seu pior pesadelo. O que encontra lá
+			muda sua vida para sempre.
+		</sinopse>
+	</livro>
+	<livro nome="A Ilha  Sob o Mar" isbn="8528614441">
+		<editora>BERTRAND BRASIL</editora>
+		<edicao>1ª Edição - 2010</edicao>		
+		<autores>
+			<autor>ALLENDE, ISABEL</autor>
+			<autor>SEGUNDO AUTOR</autor>
+		</autores>		
+		<preco>12,45</preco>		
+		<sinopse>
+			O romance narra a vida de Zarité, a escrava que foi vendida
+			aos nove anos de idade para o francês Toulouse Valmorain, dono de uma
+			das maiores plantações de cana-de-açúcar nas Antilhas. Como escrava
+			doméstica, ela não padeceu as dores e as humilhações de seus iguais,
+			mas conheceu as misérias de seus patrões - os brancos.
+		</sinopse>
+	</livro>
+</livros>

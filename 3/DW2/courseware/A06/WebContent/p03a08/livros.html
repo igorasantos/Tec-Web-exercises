@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>XML DOM</title>
+</head>
+	<body onload="onLoad()">
+		<script src="livros.js"></script>
+		<select id="livros" size="2" onclick="carregarLivro(this.value)">
+		</select>
+		<br>
+		<div id="divLivroSelecionado" style="visibility: hidden;">
+			<table border="1" width="60%">
+				<tr>
+					<td width="20%">Nome:</td>
+					<td id="nome"></td>
+				</tr>
+				<tr>
+					<td>ISBN:</td>
+					<td id="isbn"></td>
+				</tr>
+				<tr>
+					<td>Editora:</td>
+					<td id="editora"></td>
+				</tr>
+				<tr>
+					<td>Edição:</td>
+					<td id="edicao"></td>
+				</tr>
+				<tr>
+					<td>Autor(es):</td>
+					<td id="autores"></td>
+				</tr>
+				<tr>
+					<td>Preço:</td>
+					<td id="preco"></td>
+				</tr>
+				<tr>
+					<td colspan="2">Sinopse:</td>
+				</tr>
+				<tr>
+					<td colspan="2" id="sinopse"></td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
