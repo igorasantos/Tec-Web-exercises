@@ -1,0 +1,13 @@
+{
+	"id": 1,
+	"titulo": "Frango Xadrez",
+	"descricao": "Frango Xadrez estilo Japonês com molho Shoyu Light.",
+	"ingredientes": [
+			"1kg de Frango",
+			"1/2 pimentão",
+			"1 Cebola",
+			"2 colheres de sopa de azeite",
+			"2 dentes de alho"
+	],
+	"preparo": "Em uma frigideira ou panela grande, misture a metade do azeite de oliva, a cebola, o alho e deixe fritar. Retire e coloque em um prato. Na mesma panela, coloque o sal, o restante do azeite e frite os pimentões e os cogumelos por 5 minutos. Retire e despeje em outro prato. Ainda na mesma panela, coloque o frango e frite até dourar. Coloque todos os ingredientes novamente na frigideira, misture bem com uma colher de pau e refogue por mais 2 minutos. Em uma xícara, misture o molho Shoyu, a maisena e a água. Mexa bem e junte a mistura de frango. Cozinhe, mexendo constantemente, até formar um molho espesso. Coloque em uma travessa, polvilhe com amendoim e sirva quente."
+}

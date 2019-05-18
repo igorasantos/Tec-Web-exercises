@@ -1,12 +1,12 @@
 function carregarPagina(){
-	var listaAlunos = document.getElementById("resultado");
+	var listaDisciplinas = document.getElementById("resultado");
 	var xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState == 4 && xhr.status == 200) {
 			var dados = JSON.parse(xhr.responseText);
-			listaAlunos.innerHTML = "";
+			listaDisciplinas.innerHTML = "";
 			for (var i in dados) {
-				listaAlunos.innerHTML += dados[i].nome + " tem "+dados[i].ch + " horas.<br>";
+				listaDisciplinas.innerHTML += dados[i].nome + " tem "+dados[i].ch + " horas.<br>";
 			}
 		}
 	}
