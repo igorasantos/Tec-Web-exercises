@@ -5,7 +5,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>DW2 a05 e 06 trab presenc</title>
-	<script type="text/javascript">
+	<script>
 	    function carregarJsp(){
 	    	window.location = "Controller/receitas/html";
 	    }

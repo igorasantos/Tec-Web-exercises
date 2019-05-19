@@ -7,7 +7,7 @@
 	<title>DW2 a05 e 06 trab presenc</title>	
 </head>
 <body onload="get('todas',carregarReceitas)">
-	<script src="../../code.js"></script>
+	<script src="../../code_to_jsp.js"></script>
 	<h1>Receitas</h1>
 	<select id="receitas" size="5" onChange="carregarReceita(this.value)" style="width: 100%">		
 	</select>
