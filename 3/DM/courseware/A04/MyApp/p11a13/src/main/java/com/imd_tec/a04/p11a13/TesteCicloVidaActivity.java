@@ -14,9 +14,9 @@ public class TesteCicloVidaActivity extends AppCompatActivity {
         Log.d("CicloVida","A.onCreate");
         // Log.i(TAG, "A.onCreate");
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.principal);
+        setContentView(R.layout.main1);
 
-        TextView textoNovo = (TextView) findViewById(R.id.texto);
+        TextView textoNovo = (TextView) findViewById(R.id.txt1);
         textoNovo.setText("Teste sem ler configs.");
     }
     @Override
@@ -54,5 +54,4 @@ public class TesteCicloVidaActivity extends AppCompatActivity {
         Intent intent = new Intent(this,OutraActivity.class);
         startActivity(intent);
     }
-
 }

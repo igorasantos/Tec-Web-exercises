@@ -16,9 +16,9 @@ public class TesteCicloVidaActivityConfiguracao extends AppCompatActivity {
             Log.d("CicloVida","[savedInstanceState != null]");
         }
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.principal);
+        setContentView(R.layout.main3);
 
-        TextView textoNovo = (TextView) findViewById(R.id.texto);
+        TextView textoNovo = (TextView) findViewById(R.id.txt2);
         textoNovo.setText("Teste lendo configs.");
 
     }

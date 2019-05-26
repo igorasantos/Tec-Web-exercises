@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">a04 p11a13</string>
+    <string name="app_name1">a04 p11a13 - 1st activity</string>
+    <string name="app_name2">a04 p11a13 - 2nd activity</string>
 </resources>

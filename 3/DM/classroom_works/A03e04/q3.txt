@@ -1,0 +1,19 @@
+Pergunta:
+Qual a sequencia de chamada de métodos ocorrerá no seguinte cenário:
+
+a) O usuário inicia o aplicativo na Activity principal:
+Resposta:
+- onCreate
+- onStart
+- onResume
+
+b) Em seguida clica no botão HOME do Android.
+Resposta:
+- onPause
+- onStop
+
+c) E por fim, volta para a Activity através do menu de aplicações.
+Resposta:
+- onRestart
+- onStart
+- onResume
