@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#botao").click(function () {
+        var turma = $("#valorTurma").val();
+        var nome = $("#valorNome").val();
+        $("#turma").append(nome + " da turma " + turma);
+      });
+    });
+  </script>
+</head>
+<body>
+  Nome
+  <input type="text" id="valorNome"><br>
+  Turma
+  <input type="text" id="valorTurma"><br>
+  <button id="botao">Enviar</button>
+
+  <p id="turma">Você é: </p>
+</body>
+
+</html>

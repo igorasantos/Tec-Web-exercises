@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
+</head>
+<body>
+  <p class="impar" lang="pt">Aprendendo jQuery!</p>
+  <p class="par" lang="pt">Aprendendo jQuery!</p>
+  <p class="impar" lang="pt">Aprendendo jQuery!</p>
+  <p class="par" lang="pt">Aprendendo jQuery!</p>
+  <p class="impar" >Aprendendo jQuery!</p>
+  <p class="par" lang="pt">Aprendendo jQuery!</p>
+  <p class="impar" lang="pt">Aprendendo jQuery!</p>
+  <select name="teste1" id="before_change">
+    <option value="1" lang="fr">V1</option>
+    <option value="2" lang="fr">V2</option>
+  </select>
+  <script>
+    // Modificando o atributo 'value' de todos os elementos que possuam o atributo 'lang' com valor igual a 'fr'
+    $("[lang='fr']").val("changed");
+    // Modificando o valor de todos os elementos que possuam o atributo 'name' com valor igual a 'teste1'
+    $("[name='teste1']").attr("id","teste_alterado");
+    // Modificando o valor de todos os elementos que possuam o atributo 'lang' com valor igual a 'pt'
+    $("p[lang='pt']").attr("lang", "en");
+  </script>
+</body>
+</html>
