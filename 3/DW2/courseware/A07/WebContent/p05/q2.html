@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    $(document).ready( // equiv. to <body onload="...">
+      function () {
+        $("p.impar").text("Esse txt foi mudado via jQuery (e o estilo também).").css("background-color","yellow");
+      }      
+    );    
+  </script>
+</head>
+<body>
+  <p class="impar">Aprendendo jQuery!</p>
+  <p class="par">Aprendendo jQuery!</p>
+  <p class="impar">Aprendendo jQuery!</p>
+  <p class="par">Aprendendo jQuery!</p>
+  <p class="impar">Aprendendo jQuery!</p>
+  <p class="par">Aprendendo jQuery!</p>
+  <p class="impar">Aprendendo jQuery!</p>
+  <button id="bt1">Hey</button>
+  <button id="bt2">Clique aqui</button>
+  <script>
+    $("#bt1").click(
+      function () {
+        $("p.par").text("Alterado pelo clique do botão").css("color", "red");
+      }
+    );
+    $("button#bt2").click(
+      function () {
+        $("#bt2").text("Já clicou");
+      }
+    );
+  </script>
+</body>
+</html>
