@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#texto").dblclick(function() {
+        alert("Duplo clique em texto");
+        return false;
+      });
+      $("#imagens").dblclick(function() {
+    	  alert("Duplo clique em imagem")
+    	  return false;
+      });
+    });
+  </script>
+</head>
+<body>
+  <p id="texto">Carro</p>
+  <img id="imagens" src="img.png"></img>
+</body>
+
+</html>

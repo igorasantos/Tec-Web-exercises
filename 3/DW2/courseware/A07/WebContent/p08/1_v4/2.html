@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sistema de Aluguel de Carros</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("select[name='aluguel']").change(function(){
+        var tipo = $("option:selected",this).val();
+        var novoValor;
+        switch (tipo) {
+          case "economico":
+            novoValor = "R$ 45,00 diária";
+            break;
+          case "economicoAr":
+            novoValor = "R$ 50,00 diária";
+            break;
+          case "sedan":
+            novoValor = "R$ 85,00 diária";
+            break;
+          case "sedanLuxo":
+            novoValor = "R$ 100,00 diária";
+            break;
+          case "importado":
+            novoValor = "R$ 150,00 diária";
+            break;
+        }
+        $("#preco").text("Preço: "+tipo+" - "+novoValor);
+      });
+    });
+  </script>
+</head>
+<body>
+  <form action="#" method="get">
+    <select name="aluguel">
+      <option value="economico" selected="selected">Econômico</option>
+      <option value="economicoAr">Econômico Ar</option>
+      <option value="sedan">Sedan</option>
+      <option value="sedanLuxo">Sedan Luxo</option>
+      <option value="importado">Importado</option>
+    </select>
+    <br>
+    <p id="preco">Preço: </p>
+  </form>
+</body>
+
+</html>
