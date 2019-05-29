@@ -1,0 +1,16 @@
+#msg_login {
+  width: 100%;
+  background-color: darkslategray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+p {
+  color: white;
+  margin: 20px;
+}
+a{
+  margin: 20px;
+  color: yellow;
+}
