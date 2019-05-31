@@ -24,7 +24,7 @@ function definirValor() {
   var largura = $("#t2").val();
   $("#d1").css("width", largura);
 }
-function trocaCoresInputs() {
+function trocaCoresInputs() { //https://stackoverflow.com/a/6669946
   $("input").css({
     "color": "red"
   });
