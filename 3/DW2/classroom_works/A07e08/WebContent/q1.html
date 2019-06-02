@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a07e08 presenc - q1</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+  <button id="bt1">Efeito 1 (fadeToggle)</button>
+  <button id="bt2">Efeito 2 (slideToggle)</button>
+  <p id="parag">Oi, eu sou um parágrafo</p>
+  <script>
+    $(document).ready(function(){
+	  $("#bt1").click(function () {
+	    $("#parag").fadeToggle("slow");
+	  });	  
+	  $("#bt2").click(function () {
+	    $("#parag").slideToggle();
+	  });		
+	});
+  </script>  
+</body>
+</html>

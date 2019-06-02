@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>a07e08 presenc - q2</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+  <form>
+  	<label for="ufs">Estados:</label>
+    <select id="ufs"></select>
+    <label for="cidades">Cidades:</label>
+    <select id="cidades"></select>
+  </form>
+  <script>
+  	$(document).ready(function(){
+  		$.get("http://www.geonames.org/childrenJSON?geonameId=3469034",function(data){
+  			var ufs = data.geonames; 
+  			for (var i in ufs){
+  				var ufObj = ufs[i];
+  				var ufNome = ufObj.name;
+  				var ufCode = ufObj.geonameId;
+  				$("#ufs").append(new Option(ufNome,ufCode));
+  			}
+  		});
+  		$("#ufs").change(function(){
+  			$("#cidades").html("");
+  			var ufSelected = $("#ufs").val();
+  			var url = "http://www.geonames.org/childrenJSON?geonameId="+ufSelected;  			
+  			$.get(url,function(data){
+  	  			var cidades = data.geonames; 
+  	  			for (var i in cidades){
+  	  				var cidadeObj = cidades[i];
+  	  				var cidadeNome = cidadeObj.name;
+  	  				var cidadeCode = cidadeObj.geonameId;
+  	  				$("#cidades").append(new Option(cidadeNome,cidadeCode));
+  	  			}
+  	  		})
+  		});  		
+  	});
+  </script>  
+</body>
+</html>
