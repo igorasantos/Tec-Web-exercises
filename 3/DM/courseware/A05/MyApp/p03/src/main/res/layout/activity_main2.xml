@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/semc_background"
+    tools:context=".MainActivity2">
+
+</android.support.constraint.ConstraintLayout>
+
+<!-- https://talk.sonymobile.com/t5/image/serverpage/image-id/23216iF67C73937F47E349?v=1.0 -->
