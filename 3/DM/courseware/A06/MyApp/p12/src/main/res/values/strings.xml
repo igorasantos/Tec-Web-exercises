@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">a06 p12</string>
+
+    <string name="act1">a06 p12 act1</string>
+    <string name="act2">a06 p12 act2</string>
+    <string name="act3">a06 p12 act3</string>
+
+    <string name="act1_msg1">Olá! Insira \"aluno\" em login e senha</string>
+
+    <string name="act2_msg1">Parabéns! Você está logado!</string>
+    <string name="act2_msg2"></string>
+    <string name="act2_msg3">Caso queira, pode editar seu nome</string>
+
+
+    <string name="act1_txtHint1">Login</string>
+    <string name="act1_txtHint2">Senha</string>
+
+    <string name="act1_bt1">Confirmar</string>
+    <string name="act1_bt2">Limpar</string>
+    <string name="act1_bt3">Fechar</string>
+    <string name="act1_bt4">Pensar</string>
+
+    <string name="act2_bt1">Editar nome</string>
+
+    <string name="imageView1">Output</string>
+
+    <string name="act3_msg1">Olá! Insira o novo nome</string>
+    <string name="act3_txtHint1">Novo nome</string>
+    <string name="act3_bt1">Mudar</string>
+</resources>

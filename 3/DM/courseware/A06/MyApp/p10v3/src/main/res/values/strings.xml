@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">a06 p10 v3</string>
+    <string name="h1">Teste de situações</string>
+    <string name="p1"><b>Situação:</b> Quando não há no sistema Activity alguma capaz de responder ao objeto Intent <u>implícito</u> criado (ex: em aplicações que fazem integração com outras... abrir arquivo PDF).</string>
+    <string name="p2"><b>Problema:</b> Exceção lançada durante a execução <i>(ActivityNotFoundException)</i>, fazendo a aplicação ser encerrada (ex: o usuário não tem leitor de PDF).</string>
+    <string name="p3"><b>Solução:</b> Evitar erro de execução, verificando se há Activity no sistema capaz de responder ao evento de chamada de Activity pelo objeto Intent implícito criado (o método retorna uma lista), antes de chamar o método startActicity() (ex: caso identifique-se que a outra app n há no aparelho, recomenda-se ao usuário a instalação da outra aplicação necessária).</string>
+    <string name="p4"><b>Simulação:</b> Criação de Intent que nenhuma Activity é capaz de executar.</string>
+    <string name="label1">Call\nnão trat.</string>
+    <string name="label2">Call\ntrat.</string>
+    <string name="bt1">Activity\nexist.</string>
+    <string name="bt2">Activity inexist.\n(vai travar)</string>
+    <string name="bt3">Activity\nexist.</string>
+    <string name="bt4">Activity\ninexist.</string>
+</resources>

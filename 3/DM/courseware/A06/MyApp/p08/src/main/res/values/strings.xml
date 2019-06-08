@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">a06 p08</string>
+    <string name="act1">a06 p08 act1</string>
+    <string name="act2">a06 p08 act2</string>
+    <string name="msg1">Olá! Insira \"aluno\" em login e senha</string>
+    <string name="msg2">Parabéns! Você está logado!</string>
+    <string name="txtHint1">Login</string>
+    <string name="txtInput1">Login</string>
+    <string name="txtHint2">Senha</string>
+    <string name="txtInput2">Senha</string>
+    <string name="bt1">Confirmar</string>
+    <string name="bt2">Limpar</string>
+    <string name="bt3">Fechar</string>
+    <string name="bt4">Pensar</string>
+    <string name="imageView1">Output</string>
+</resources>

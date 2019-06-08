@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">a06 p11 v4</string>
+    <string name="act1">a06 p11 v4 - own call</string>
+    <string name="act2">a06 p11 v4 - shared call</string>
+    <string name="msg1">Activity iniciada pela própria aplicação</string>
+    <string name="msg2">Activity iniciada por outra aplicação, a partir da ação de share/send</string>
+</resources>

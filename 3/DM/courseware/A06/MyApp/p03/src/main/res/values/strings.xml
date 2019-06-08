@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">a06 p03</string>
+    <string name="msg1">Olá!\n\nInsira um número e\naperte o botão\npara discá-lo pelo telefone</string>
+    <string name="bt1">Discar o número</string>
+    <string name="txtInput1">Número do telefone</string>
+</resources>
