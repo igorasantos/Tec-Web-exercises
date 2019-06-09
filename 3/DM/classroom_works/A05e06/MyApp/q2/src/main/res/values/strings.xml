@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">a05e06 presenc</string>
+    <string name="act1">a05e06 presenc [q2]</string>
+    <string name="act1_label1">Temperatura em Celcius:</string>
+    <string name="act1_txtField1">Informe a temperatura</string>
+    <string name="act1_label2">Temperatura em Fahrenheit:</string>
+    <string name="act1_txtField2">Resultado</string>
+    <string name="act1_bt1">Converter!</string>
+</resources>

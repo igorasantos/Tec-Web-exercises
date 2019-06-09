@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">a05e06 presenc</string>
+    <string name="act1">a05e06 presenc [q3]</string>
+    <string name="act2">a05e06 presenc [q3] - Ajuda</string>
+    <string name="act1_label1">Temperatura em Celcius:</string>
+    <string name="act1_txtField1">Informe a temperatura</string>
+    <string name="act1_label2">Temperatura em Fahrenheit:</string>
+    <string name="act1_txtField2">Resultado</string>
+    <string name="act1_bt1">Converter!</string>
+    <string name="act1_bt2">Ajuda</string>
+    <string name="act2_txt1">Celsius (°C) designa a unidade de temperatura, assim denominada em homenagem ao astrônomo sueco Anders Celsius (1701-1744), que foi o primeiro a propô-la em 1742. A escala de temperatura Celsius foi concebida de forma a que o ponto de congelação (congelamento) da água corresponde a 0 grau, e o ponto de evaporação corresponde a 100 graus observados a uma pressão atmosférica padrão.\n\nO Fahrenheit é uma escala de temperatura termodinâmica, onde o ponto de congelamento da água é de 32 graus Fahrenheit (°F) e o ponto de ebulição de 212 °F (com uma pressão atmosférica normal). Isso coloca os pontos de ebulição e de congelamento da água exatamente a 180 graus de separação. Por conseguinte, um grau na escala Fahrenheit é de 1/180 de intervalo entre o ponto de congelação e o ponto de ebulição da água. O zero absoluto é definido como igual a -459,67 °F. A diferença de temperatura de 1 °F é o equivalente a uma diferença de temperatura de 0,556 °C.</string>
+</resources>

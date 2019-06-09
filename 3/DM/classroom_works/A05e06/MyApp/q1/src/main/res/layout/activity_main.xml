@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/act1_layout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    android:gravity="top"
+    android:orientation="vertical"
+    tools:context="com.imd_tec.a05e06.presenc.q1.MainActivity">
+
+    <TextView
+        android:id="@+id/act1_label1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/act1_label1" />
+
+    <EditText
+        android:id="@+id/act1_txtField1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:hint="@string/act1_txtField1"/>
+
+    <TextView
+        android:id="@+id/act1_label2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/act1_label2" />
+
+    <EditText
+        android:id="@+id/act1_txtField2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:hint="@string/act1_txtField2"
+        android:editable="false"
+        android:enabled="false"/>
+
+    <Button
+        android:id="@+id/act1_bt1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/act1_bt1"
+        android:onClick="convertCelciusToFahrenheit"/>
+</LinearLayout>
