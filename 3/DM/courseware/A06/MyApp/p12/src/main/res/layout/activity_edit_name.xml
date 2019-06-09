@@ -22,31 +22,52 @@
         android:textSize="20sp"
         android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/act3_label1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="50dp"
+        android:ems="10"
+        android:text="@string/act3_label1"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
     <EditText
         android:id="@+id/campo_nome_anterior"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="50dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="50dp"
         android:ems="10"
         android:enabled="false"
         android:focusable="false"
         android:importantForAutofill="no"
         android:inputType="text"
-        android:maxLines="1"
-         />
+        android:maxLines="1" />
+
+    <TextView
+        android:id="@+id/act3_label2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="50dp"
+        android:ems="10"
+        android:text="@string/act3_label2"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/campo_novo_nome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
+        android:layout_marginBottom="30dp"
         android:ems="10"
         android:hint="@string/act3_txtHint1"
         android:importantForAutofill="no"
         android:inputType="text"
-        android:maxLines="1"
-        />
+        android:maxLines="1" />
 
     <Button
         android:id="@+id/act3_bt1"
