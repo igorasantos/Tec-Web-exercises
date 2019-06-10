@@ -17,7 +17,7 @@ function carregarLista() {
   for (var i = 0; i < livros.length; i++) {
     var livro = livros[i];
     var campoLivro = document.getElementById("livros");
-    campoLivro.options[campoLivro.length] = new Option(livro.nome,""+i);
+    campoLivro.options[campoLivro.length] = new Option(livro.nome,i);
   }
 }
 function carregarLivro(indice) {
