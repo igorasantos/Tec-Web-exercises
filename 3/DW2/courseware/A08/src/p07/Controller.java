@@ -16,7 +16,7 @@ public class Controller extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String acao = request.getServletPath();
 		String resposta = "";
-		if (acao.equals("/p07/Controller/infos/info")) {
+		if (acao.equals("/p07/Controller/infos/info") && request.getParameter("nome").equals("John") && request.getParameter("sobrenome").equals("Lennon")) {
 			request.setCharacterEncoding("UTF-8");
 			String method = request.getParameter("method");
 			resposta = "info-"+method+".json";

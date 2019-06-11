@@ -2,7 +2,7 @@ $(document).ready(function(){
 	$("#b1").click(function(){ // equiv à função get
 //		get("Controller/infos/info?method=get",publicaDados);
 		var url_ = "Controller/infos/info";
-		var jqxhr = $.ajax({ // não entendi o que mudou significativamente... usar .ajax ou .get (jQuery) ou o XHR puro parece dar no mesmo resultado 
+		var jqxhr = $.ajax({ // não entendi o que mudou significativamente... $.ajax ou $.get ou o XHR puro parece dar no mesmo resultado 
 			url: url_,
 			data : {
 				'method':'get',
@@ -38,7 +38,6 @@ function get(url, callback1stLevel){
 	xhr.onreadystatechange = function(){
 		if (xhr.readyState == 4 && xhr.status == 200){
 			var jsonFileName = xhr.responseText;
-			jsonFileName = jsonFileName;
 			carregarJsonGet(jsonFileName,callback1stLevel);		
 		}
 	};
@@ -64,7 +63,6 @@ function post(url, callback1stLevel){
 	xhr.onreadystatechange = function(){
 		if (xhr.readyState == 4 && xhr.status == 200){
 			var jsonFileName = xhr.responseText;
-			jsonFileName = jsonFileName;
 			carregarJsonPost(jsonFileName,callback1stLevel);		
 		}
 	};
@@ -85,6 +83,10 @@ function carregarJsonPost(jsonFileURL,callback2ndLevel){
 	xhr.send(null);
 }
 function publicaDados(infoJson){
-	var dados = JSON.parse(infoJson);
-	$("#ta1").val("Cidade: "+dados.cidade+"\n"+"País: "+dados.pais+"\n"+"Método de Consulta: "+dados.metodo);
+	try{	
+		var dados = JSON.parse(infoJson);
+		$("#ta1").val("Cidade: "+dados.cidade+"\n"+"País: "+dados.pais+"\n"+"Método de Consulta: "+dados.metodo);
+	} catch(e){
+		$("#ta1").val("Erro: O nome ou sobrenome informados não são parâmetros válidos.\nErro retornado: "+e);
+	}
 }

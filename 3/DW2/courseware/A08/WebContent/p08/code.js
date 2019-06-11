@@ -12,11 +12,18 @@ function onLoad() {
 }
 function carregarLista() {
   var livros = jsonObj.livros;
-  for (var i = 0; i < livros.length; i++) {
-    var livro = livros[i];
-    var campoLivro = document.getElementById("livros");
-    campoLivro.options[campoLivro.length] = new Option(livro.nome,i);
-  }
+//  for (var i = 0; i < livros.length; i++) {
+//    var livro = livros[i];
+//    var campoLivro = document.getElementById("livros");
+//    campoLivro.options[campoLivro.length] = new Option(livro.nome,i);
+//  }
+  //https://stackoverflow.com/a/14447147
+  $.each(livros, function (i, item) {
+	  $('#livros').append($('<option>', {
+		  value: i,
+		  text : livros[i].nome 
+	  }));
+  });
 }
 function carregarLivro() {
   var indice = $("#livros").val();
