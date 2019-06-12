@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>a09 p06</title>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+
+<body>
+  <script>
+    $(function () {
+      var livros = [
+        "1822", "Comprometida", "Comer, Rezar, Amar", "Ágape",
+        "Incríveis passatempos matemáticos", "Brasil - uma história",
+        "Nosso lar", "O Aleph", "Aforismos"
+      ];
+      $("#livros").autocomplete({
+        source: livros
+      });
+    });
+  </script>
+  <label for="livros">Procurar:</label>
+  <input id="livros">
+</body>
+</html>

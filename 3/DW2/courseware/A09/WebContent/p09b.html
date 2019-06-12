@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>a09 p09</title>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://cdn.jsdelivr.net/gh/jquery/jquery-ui/ui/i18n/datepicker-pt-BR.js"></script>
+</head>
+
+<body>
+  <label for="t1">Data:</label>
+  <input type="text" id="t1">
+  <script>
+    $(function () {
+      $('#t1').datepicker($.datepicker.regional['pt-BR']);
+    });
+  </script>
+</body>
+</html>
