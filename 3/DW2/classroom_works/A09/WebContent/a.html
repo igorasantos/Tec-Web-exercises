@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>a09 p14</title>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://cdn.jsdelivr.net/gh/jquery/jquery-ui/ui/i18n/datepicker-pt-BR.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script>
+    $(document).ready(function(){
+      $('#dataNascimento').datepicker($.datepicker.regional['pt-BR']);
+      var cidades = ['Natal','Caicó','Mossoró','Assú'];
+      $("#cidade").autocomplete({
+        source: cidades
+      });
+      // progress bar with jQuery UI
+      // https://stackoverflow.com/a/49197584
+      $("#progresso").progressbar({
+        value: 0
+      });      
+      var inputs = $("input");
+      var totInputs = inputs.length;
+      inputs.keyup(function(){
+        var progressValue = 0;
+        inputs.each(function(){
+          if($(this).val().length > 0){            
+            progressValue++;            
+          }
+        });
+        var valorPorcent = (progressValue / totInputs)*100;        
+        $("#progresso").progressbar({
+          value: valorPorcent
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1 class="my-3">Cadastro</h1>
+    <form>
+      <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" class="form-control">
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="dataNascimento">Data de nascimento:</label>
+          <input type="text" id="dataNascimento" class="form-control">
+        </div>
+        <div class="form-group col-md-8">
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" class="form-control">
+          </div>
+      </div>
+      <!-- jQuery UI Progress bar without Bootstrap -->
+      <div class="form-group">
+        Progresso:
+        <div id="progresso"></div>
+      </div>      
+      <button type="button" class="btn btn-primary">Enviar</button>      
+    </form>  
+  </div>
+</body>
+</html>
