@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import password.Pass;
-import vids_sistEdu.Conector;
+//import vids_sistEdu.Conector;
 public class Clientes {
 	Pass p = new Pass();
     String password = p.getPassword();

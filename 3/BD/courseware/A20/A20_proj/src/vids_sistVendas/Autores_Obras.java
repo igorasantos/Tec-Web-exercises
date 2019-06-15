@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import password.Pass;
-import vids_sistEdu.Conector;
+//import vids_sistEdu.Conector;
 public class Autores_Obras {
 	Pass p = new Pass();
     String password = p.getPassword();
