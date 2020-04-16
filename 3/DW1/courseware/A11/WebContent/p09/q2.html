@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8" />
 	<title>Page Title</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
+
 <body class="d-flex flex-column h-100">
 	<main role="main" class="flex-shrink-0">
 		<div class="container">
-			<!--
-			other option to avoid the submit - for testing scenarios:
-			<form class="p-md-3 needs-validation" id="formToValidate" novalidate action="javascript:void(0);">
-			-->
 			<form class="p-md-3 needs-validation" id="formToValidate" novalidate>
 				<div class="row">
 					<div class="form-group col">
 						<label for="formInput1">Texto</label>
-						<input type="text" class="form-control" id="formInput1" placeholder="Digite aqui" aria-describedby="dicaInput1" required>
+						<input type="text" class="form-control" id="formInput1" placeholder="Digite aqui"
+							aria-describedby="dicaInput1" required>
 						<small id="dicaInput1" class="form-text text-muted">
 							Digite uma frase que será usada para a consulta de caractere.
 						</small>
@@ -31,26 +30,28 @@
 							<div class="input-group-prepend">
 								<div class="input-group-text">Index</div>
 							</div>
-							<input type="number" class="form-control" id="formInput2" placeholder="Digite aqui" aria-describedby="dicaInput2" required>
-							</div>
-							<small id="dicaInput2" class="form-text text-muted">
-								Digite o índice do caractere desejado (começando por 0).
-							</small>
-							<!-- From here - This div is been shown with a little kludge (at the js file) -->
-							<div class="invalid-feedback" id="invalidMsg">
+							<input type="number" class="form-control" id="formInput2" placeholder="Digite aqui"
+								aria-describedby="dicaInput2" required>
+
+							<div class="invalid-feedback">
 								Campo inválido! Favor, digite um índice dentro do tamanho do texto.
 							</div>
-							<!-- to here -->
+						</div>
+						<small id="dicaInput2" class="form-text text-muted">
+							Digite o índice do caractere desejado (começando por 0).
+						</small>
+
 					</div>
 				</div>
-				<!-- submit works typing 'enter'! -->
 				<button type="submit" class="btn btn-primary">Capturar letra</button>
+				<button type="reset" class="btn btn-secondary">Limpar</button>
 			</form>
-			<div class="alert alert-success d-none" id="divResult" role="alert">				
+			<div class="alert alert-success d-none" id="divResult" role="alert">
 			</div>
 		</div>
 	</main>
-	<script src="q2.js">		
+	<script src="q2.js">
 	</script>
 </body>
+
 </html>
